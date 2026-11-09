@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>死: ONE HIT KILL - Official Site</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts for Cinematic Header & UI Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #080809;
+      color: #E2E8F0;
+    }
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+    }
+    /* Glow effect for main CTAs */
+    .btn-glow {
+      box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+      transition: all 0.3s ease;
+    }
+    .btn-glow:hover {
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.9);
+      transform: translateY(-2px);
+    }
+    /* Ink & Ash Atmospheric Background Radial Glows */
+    .bg-ash-glow {
+      background: radial-gradient(circle at 75% 40%, rgba(185, 28, 28, 0.15) 0%, rgba(15, 17, 21, 0) 50%),
+                  radial-gradient(circle at 20% 80%, rgba(30, 41, 59, 0.2) 0%, rgba(8, 8, 9, 0) 60%);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between bg-ash-glow relative overflow-x-hidden">
+
+  <!-- BACKGROUND EMBER ACCENTS -->
+  <div class="absolute top-1/4 left-10 w-2 h-2 bg-red-500 rounded-full blur-[1px] opacity-75 animate-pulse"></div>
+  <div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-red-600 rounded-full blur-[1px] opacity-60 animate-ping"></div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="w-full border-b border-white/10 bg-black/40 backdrop-blur-md fixed top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-2 text-xl md:text-2xl font-black tracking-wider text-white hover:text-red-500 transition">
+        <span class="text-red-600 font-cinzel">死:</span> ONE HIT KILL
+      </a>
+
+      <!-- NAVIGATION LINKS -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-widest text-gray-400">
+        <a href="#bosses" class="hover:text-white transition">BOSSES</a>
+        <a href="#weapons" class="hover:text-white transition">WEAPONS</a>
+        <a href="#lore" class="hover:text-white transition">WORLD (LORE)</a>
+        <a href="#media" class="hover:text-white transition">MEDIA</a>
+      </nav>
+
+      <!-- HEADER CTA -->
+      <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
+         class="btn-glow bg-gradient-to-r from-red-700 to-red-600 text-white font-bold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase">
+        PLAY NOW
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-44 lg:pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+    
+    <!-- LEFT COLUMN: HEADLINE & ACTIONS -->
+    <div class="lg:col-span-6 space-y-8 z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/60 border border-red-800/40 text-red-400 text-xs font-semibold tracking-widest">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> SPAWN.CO ORIGINAL
+      </div>
+
+      <div class="space-y-2">
+        <h2 class="text-red-500 font-cinzel text-lg md:text-xl tracking-widest uppercase">死: ONE HIT KILL</h2>
+        <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight uppercase leading-none font-cinzel">
+          ONE STRIKE.<br>
+          <span class="text-gray-200">ONE DECISION.</span>
+        </h1>
+      </div>
+
+      <p class="text-gray-400 text-base md:text-lg max-w-xl leading-relaxed">
+        A precision 1v1 sword duel. One clean hit ends everything. Master stamina, parry the blade, and dominate high-stakes duels in a realm of shadow and ash.
+      </p>
+
+      <!-- CTA BUTTON GROUP -->
+      <div class="flex flex-wrap items-center gap-4 pt-2">
+        <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
+           class="btn-glow bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white font-extrabold text-sm px-8 py-4 rounded-full tracking-wider uppercase flex items-center gap-3">
+          PLAY NOW <i class="fa-solid fa-play text-xs"></i>
+        </a>
+        
+        <a href="#media" class="border border-gray-700 hover:border-gray-500 bg-gray-900/50 hover:bg-gray-800/60 text-gray-300 font-bold text-sm px-8 py-4 rounded-full tracking-wider uppercase transition">
+          WATCH TRAILER
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: VISUAL COMPOSITION / STANCE EMBLEM -->
+    <div class="lg:col-span-6 relative flex justify-center items-center">
+      <!-- Ambient Glow Behind Character Frame -->
+      <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-red-600/20 rounded-full blur-3xl"></div>
+      
+      <!-- Frame Container -->
+      <div class="relative w-full max-w-lg aspect-[4/3] rounded-2xl border border-white/10 bg-gradient-to-b from-gray-900/60 to-black/80 backdrop-blur-sm p-6 overflow-hidden shadow-2xl flex flex-col justify-between">
+        
+        <!-- Subtle Slashing Glow Line (CSS Art Element) -->
+        <div class="absolute -top-10 -right-10 w-96 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent rotate-45 blur-[1px]"></div>
+        <div class="absolute top-1/2 -left-20 w-[500px] h-0.5 bg-gradient-to-r from-transparent via-red-600/40 to-transparent -rotate-12"></div>
+
+        <!-- Atmospheric Stance Card Placeholder -->
+        <div class="z-10 space-y-4">
+          <span class="text-xs font-mono text-red-500 tracking-widest uppercase">// STANCE MECHANICS</span>
+          <h3 class="text-2xl font-bold text-white font-cinzel">PRECISION DUALITY</h3>
+          <p class="text-xs text-gray-400 max-w-sm">
+            High Guard, Low Shadow, and Directional Countering. Read your opponent's movement before the strike connects.
+          </p>
+        </div>
+
+        <!-- Interactive Creator Badge -->
+        <div class="z-10 self-end flex items-center gap-3 bg-black/60 border border-white/10 px-4 py-2 rounded-xl backdrop-blur-md">
+          <div class="w-8 h-8 rounded-full bg-red-950 border border-red-500/50 flex items-center justify-center text-red-400 text-xs font-bold font-cinzel">
+            死
+          </div>
+          <div class="text-xs">
+            <p class="text-gray-400 leading-none">A Game by</p>
+            <p class="text-white font-bold leading-tight">@chocopuff</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CONTENT PLACEHOLDER SECTIONS FOR MENU ANCHORS -->
+  <section id="bosses" class="max-w-7xl mx-auto px-6 py-12 border-t border-white/5">
+    <h3 class="text-xs font-mono text-red-500 tracking-widest uppercase mb-2">// DUELISTS & BOSSES</h3>
+    <h2 class="text-3xl font-bold text-white font-cinzel mb-6">THE GUARDIANS OF ASH</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl border border-white/10 bg-gray-900/40 backdrop-blur-sm">
+        <h4 class="font-cinzel text-xl text-white font-bold">The Ashen Ronin</h4>
+        <p class="text-xs text-gray-400 mt-2">Relentless stance changes with tight parry windows.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-white/10 bg-gray-900/40 backdrop-blur-sm">
+        <h4 class="font-cinzel text-xl text-white font-bold">Shadow Blade Kaeda</h4>
+        <p class="text-xs text-gray-400 mt-2">Fast, high-stamina moves requiring precise timing.</p>
+      </div>
+      <div class="p-6 rounded-xl border border-white/10 bg-gray-900/40 backdrop-blur-sm">
+        <h4 class="font-cinzel text-xl text-white font-bold">Grandmaster Kensei</h4>
+        <p class="text-xs text-gray-400 mt-2">Unforgiving counter-attacks; one mistake means death.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / SOCIAL BAR -->
+  <footer class="w-full border-t border-white/10 bg-black/80 py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- SOCIAL ICONS -->
+      <div class="flex items-center space-x-6 text-xl text-gray-500">
+        <a href="#" class="hover:text-red-500 transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="hover:text-red-500 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-red-500 transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="hover:text-red-500 transition" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+
+      <!-- CREDITS & FOOTER LINK -->
+      <div class="text-xs text-gray-500 text-center md:text-right">
+        Available now on <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" class="text-gray-300 underline hover:text-red-400">Spawn.co</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
