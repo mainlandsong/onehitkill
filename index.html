@@ -357,7 +357,7 @@
           ◄
         </button>
 
-        <!-- CENTER DISPLAY: BACKGROUND SPRITE VIEWPORT FOR PERFECT CENTERING -->
+        <!-- CENTER DISPLAY: BACKGROUND SPRITE VIEWPORT WITH EXACT TIER SCROLLING -->
         <div class="relative flex-grow h-48 sm:h-56 md:h-64 rounded-xl border border-white/10 bg-black/90 overflow-hidden flex items-center justify-center shadow-inner">
           
           <!-- UP / DOWN ARROW OVERLAYS FOR TIER SCROLLING -->
@@ -371,10 +371,10 @@
             </button>
           </div>
 
-          <!-- SPRITE FRAME: USES BACKGROUND POSITION TO CENTER EACH SWORD EXACTLY -->
+          <!-- SPRITE FRAME: USES BACKGROUND POSITION AND CONTINUOUS SCALING TO ZOOM IN ON A SINGLE SWORD -->
           <div id="swordSpriteFrame" 
                class="w-full h-full transition-all duration-300 ease-out" 
-               style="background-repeat: no-repeat; background-position: center 0%; background-size: contain;">
+               style="background-repeat: no-repeat; background-position: center 0%; background-size: auto 800%;">
           </div>
 
         </div>
@@ -706,7 +706,7 @@
       // Calculate background position percentage (0% for Tier 1 to 100% for Tier 8)
       const posPercent = (currentTierIndex / 7) * 100;
       frame.style.backgroundPosition = `center ${posPercent.toFixed(4)}%`;
-      frame.style.backgroundSize = "contain";
+      frame.style.backgroundSize = "auto 800%";
 
       // Update Top Nav Button Styling
       for (let i = 0; i < elementalBlades.length; i++) {
