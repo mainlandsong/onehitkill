@@ -27,6 +27,17 @@
       font-family: 'Minaisgone', serif;
     }
 
+    /* Primary Accent Color Classes (#3ff5d8) */
+    .text-teal-accent {
+      color: #3ff5d8 !important;
+    }
+    .bg-teal-accent {
+      background-color: #3ff5d8 !important;
+    }
+    .border-teal-accent {
+      border-color: rgba(63, 245, 216, 0.4) !important;
+    }
+
     /* Slim Noto Serif globally for body text */
     html, body {
       background-color: #080809 !important;
@@ -35,19 +46,20 @@
       font-weight: 300;
     }
 
-    /* Logo-derived Electric Cyan Glow */
-    .btn-glow-cyan {
-      box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
+    /* Logo-derived #3ff5d8 Glow for primary actions */
+    .btn-glow-teal {
+      background: linear-gradient(135deg, #3ff5d8 0%, #00b4a0 100%);
+      box-shadow: 0 0 20px rgba(63, 245, 216, 0.5);
       transition: all 0.3s ease;
     }
-    .btn-glow-cyan:hover {
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.9);
+    .btn-glow-teal:hover {
+      box-shadow: 0 0 32px rgba(63, 245, 216, 0.85);
       transform: translateY(-2px);
     }
     
-    /* Cyan & Red Ember Background Gradient */
+    /* Teal #3ff5d8 & Red Ember Background Gradient */
     .bg-ash-glow {
-      background: radial-gradient(circle at 75% 25%, rgba(6, 182, 212, 0.15) 0%, rgba(8, 8, 9, 0) 50%),
+      background: radial-gradient(circle at 75% 25%, rgba(63, 245, 216, 0.12) 0%, rgba(8, 8, 9, 0) 50%),
                   radial-gradient(circle at 15% 75%, rgba(185, 28, 28, 0.12) 0%, rgba(8, 8, 9, 0) 60%);
     }
 
@@ -57,19 +69,19 @@
     }
     .boss-card:hover, .gallery-card:hover {
       transform: translateY(-4px) scale(1.02);
-      border-color: rgba(6, 182, 212, 0.6);
-      box-shadow: 0 10px 25px -10px rgba(6, 182, 212, 0.3);
+      border-color: rgba(63, 245, 216, 0.6);
+      box-shadow: 0 10px 25px -10px rgba(63, 245, 216, 0.3);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between bg-ash-glow relative overflow-x-hidden bg-[#080809] text-gray-100">
 
   <!-- BACKGROUND AMBIENT SPARK ACCENTS -->
-  <div class="absolute top-1/4 left-10 w-2 h-2 bg-cyan-400 rounded-full blur-[1px] opacity-80 animate-pulse"></div>
+  <div class="absolute top-1/4 left-10 w-2 h-2 rounded-full blur-[1px] opacity-80 animate-pulse bg-teal-accent"></div>
   <div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-red-600 rounded-full blur-[1px] opacity-60 animate-ping"></div>
 
   <!-- STICKY TOP NAVIGATION BAR -->
-  <header class="w-full border-b border-cyan-900/30 bg-[#080809]/90 backdrop-blur-md fixed top-0 z-40">
+  <header class="w-full border-b border-teal-accent bg-[#080809]/90 backdrop-blur-md fixed top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
       <!-- LOGO IMAGE -->
@@ -81,14 +93,14 @@
       </a>
 
       <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-widest text-gray-300 font-sans">
-        <a href="#bosses" class="hover:text-cyan-400 transition">BOSSES</a>
-        <a href="#weapons" class="hover:text-cyan-400 transition">WEAPONS</a>
-        <a href="#lore" class="hover:text-cyan-400 transition">WORLD (LORE)</a>
-        <a href="#media" class="hover:text-cyan-400 transition">MEDIA</a>
+        <a href="#bosses" class="hover:text-teal-accent transition">BOSSES</a>
+        <a href="#weapons" class="hover:text-teal-accent transition">WEAPONS</a>
+        <a href="#lore" class="hover:text-teal-accent transition">WORLD (LORE)</a>
+        <a href="#media" class="hover:text-teal-accent transition">MEDIA</a>
       </nav>
 
       <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-         class="btn-glow-cyan bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-extrabold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase font-sans">
+         class="btn-glow-teal text-black font-extrabold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase font-sans">
         PLAY NOW
       </a>
     </div>
@@ -98,12 +110,12 @@
   <main class="max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-44 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
     <div class="lg:col-span-6 space-y-8 z-10">
       
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/50 text-cyan-400 text-xs font-semibold tracking-widest font-sans">
-        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> SPAWN.CO ORIGINAL
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#082220] border border-teal-accent text-teal-accent text-xs font-semibold tracking-widest font-sans">
+        <span class="w-2 h-2 rounded-full bg-teal-accent animate-pulse"></span> SPAWN.CO ORIGINAL
       </div>
 
       <div class="space-y-2">
-        <h2 class="text-cyan-400 font-custom text-lg md:text-xl tracking-widest uppercase">死: ONE HIT KILL</h2>
+        <h2 class="text-teal-accent font-custom text-lg md:text-xl tracking-widest uppercase">死: ONE HIT KILL</h2>
         <h1 class="text-5xl md:text-7xl text-white tracking-tight uppercase leading-none font-custom drop-shadow-md">
           ONE STRIKE.<br>
           <span class="text-gray-300">ONE DECISION.</span>
@@ -116,7 +128,7 @@
 
       <div class="flex flex-wrap items-center gap-4 pt-2 font-sans">
         <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-           class="btn-glow-cyan bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-600 text-black font-extrabold text-sm px-8 py-4 rounded-full tracking-wider uppercase flex items-center gap-3">
+           class="btn-glow-teal text-black font-extrabold text-sm px-8 py-4 rounded-full tracking-wider uppercase flex items-center gap-3">
           PLAY NOW <i class="fa-solid fa-play text-xs"></i>
         </a>
         
@@ -128,18 +140,18 @@
 
     <!-- RIGHT HERO DISPLAY -->
     <div class="lg:col-span-6 relative flex justify-center items-center">
-      <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl" style="background-color: rgba(63, 245, 216, 0.15);"></div>
       
-      <div class="relative w-full max-w-lg aspect-[4/3] rounded-2xl border border-cyan-500/20 bg-gradient-to-b from-gray-900/90 to-black/95 backdrop-blur-md p-6 overflow-hidden shadow-2xl flex flex-col justify-between">
-        <div class="absolute -top-10 -right-10 w-96 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rotate-45 blur-[1px]"></div>
+      <div class="relative w-full max-w-lg aspect-[4/3] rounded-2xl border border-teal-accent bg-gradient-to-b from-gray-900/90 to-black/95 backdrop-blur-md p-6 overflow-hidden shadow-2xl flex flex-col justify-between">
+        <div class="absolute -top-10 -right-10 w-96 h-1 bg-gradient-to-r from-transparent via-[#3ff5d8] to-transparent rotate-45 blur-[1px]"></div>
         <div class="absolute top-1/2 -left-20 w-[500px] h-0.5 bg-gradient-to-r from-transparent via-red-600/40 to-transparent -rotate-12"></div>
 
         <div class="z-10 flex flex-col items-center justify-center my-auto py-2">
-          <img src="images/logo.png" alt="死: One Hit Kill" class="max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">
+          <img src="images/logo.png" alt="死: One Hit Kill" class="max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_0_25px_rgba(63,245,216,0.4)]">
         </div>
 
         <div class="z-10 self-end flex items-center gap-3 bg-black/80 border border-white/10 px-4 py-2 rounded-xl backdrop-blur-md">
-          <div class="w-8 h-8 rounded-full bg-cyan-950 border border-cyan-400/50 flex items-center justify-center text-cyan-400 text-xs font-bold font-custom">
+          <div class="w-8 h-8 rounded-full bg-[#082220] border border-teal-accent flex items-center justify-center text-teal-accent text-xs font-bold font-custom">
             死
           </div>
           <div class="text-xs font-sans">
@@ -155,7 +167,7 @@
   <section id="bosses" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
       <div>
-        <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// BOSSES</span>
+        <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// BOSSES</span>
         <h2 class="text-3xl font-bold text-white font-custom mt-1">THE GUARDIANS OF ASH</h2>
       </div>
       <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Select a boss guardian to inspect elemental combat data & fight details</p>
@@ -183,8 +195,8 @@
           <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">02</span>
         </div>
-        <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">ELEMENT: ICE</span>
-        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
+        <span class="text-[10px] font-mono text-teal-accent tracking-widest uppercase">ELEMENT: ICE</span>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-teal-accent transition">Astrid</h3>
         <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Composed First Breaker who commands the Celestial Borealis to freeze parry windows.</p>
       </div>
 
@@ -265,7 +277,7 @@
 
   <!-- POP-UP MODAL -->
   <div id="bossModalOverlay" onclick="closeBossModal(event)" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div id="bossModalContainer" class="bg-gray-950 border border-cyan-500/30 rounded-2xl max-w-3xl w-full p-6 md:p-8 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="bossModalContainer" class="bg-gray-950 border border-teal-accent rounded-2xl max-w-3xl w-full p-6 md:p-8 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
       
       <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition">
         &times;
@@ -281,7 +293,7 @@
           </div>
           <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 px-1">
             <span>PARRY WINDOW: <strong class="text-white" id="modalParry">--</strong></span>
-            <span>DIFFICULTY: <strong class="text-cyan-400" id="modalDifficulty">--</strong></span>
+            <span>DIFFICULTY: <strong class="text-teal-accent" id="modalDifficulty">--</strong></span>
           </div>
         </div>
 
@@ -304,7 +316,7 @@
           </div>
 
           <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-             class="btn-glow-cyan w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
+             class="btn-glow-teal w-full text-black font-bold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
             CHALLENGE IN GAME
           </a>
         </div>
@@ -315,7 +327,7 @@
 
   <!-- SECTION 2: WEAPONS -->
   <section id="weapons" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
-    <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// ARSENAL</span>
+    <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// ARSENAL</span>
     <h2 class="text-3xl font-bold text-white font-custom mb-8 mt-1">BLADES OF DESTINY</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="p-6 rounded-xl border border-white/10 bg-gray-900/60 backdrop-blur-sm">
@@ -331,26 +343,26 @@
 
   <!-- SECTION 3: WORLD (LORE) -->
   <section id="lore" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
-    <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// THE REALM</span>
+    <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// THE REALM</span>
     <h2 class="text-3xl font-bold text-white font-custom mb-4 mt-1">WORLD OF SHADOW & ASH</h2>
     <p class="text-gray-300 text-sm max-w-3xl leading-relaxed font-light">
       Set in ruined duel arenas across ancient mythic grounds, warriors gather to test their precision where armor offers no protection and victory is determined in a fraction of a second.
     </p>
   </section>
 
-  <!-- SECTION 4: MEDIA & TRAILERS (EMBEDDED YOUTUBE + 6-BOX CONCEPT ART GALLERY) -->
+  <!-- SECTION 4: MEDIA & TRAILERS -->
   <section id="media" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <div class="mb-8">
-      <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// SHOWCASE</span>
+      <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// SHOWCASE</span>
       <h2 class="text-3xl font-bold text-white font-custom mt-1">MEDIA & TRAILERS</h2>
     </div>
 
-    <!-- MAIN MEDIA LAYOUT: YOUTUBE VIDEO (LEFT) + 6 SCREENSHOT BOXES (RIGHT) -->
+    <!-- MAIN MEDIA LAYOUT -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
-      <!-- LEFT: YOUTUBE TRAILER PLAYER (7 COLS ON DESKTOP) -->
+      <!-- LEFT: YOUTUBE TRAILER PLAYER -->
       <div class="lg:col-span-7 w-full">
-        <div class="aspect-video w-full rounded-2xl border border-cyan-500/30 overflow-hidden bg-black shadow-2xl relative group">
+        <div class="aspect-video w-full rounded-2xl border border-teal-accent overflow-hidden bg-black shadow-2xl relative group">
           <iframe 
             class="w-full h-full" 
             src="https://www.youtube-nocookie.com/embed/cWTVHlZ6M6o?rel=0" 
@@ -362,11 +374,11 @@
         </div>
         <div class="flex items-center justify-between mt-3 px-1 text-xs font-mono text-gray-400">
           <span>// OFFICIAL GAMEPLAY TRAILER</span>
-          <span class="text-cyan-400">SPAWN.CO ORIGINAL</span>
+          <span class="text-teal-accent">SPAWN.CO ORIGINAL</span>
         </div>
       </div>
 
-      <!-- RIGHT: 6-BOX SCREENSHOT / CONCEPT ART GRID (5 COLS ON DESKTOP) -->
+      <!-- RIGHT: 6-BOX SCREENSHOT / CONCEPT ART GRID -->
       <div class="lg:col-span-5 space-y-3">
         <div class="flex items-center justify-between">
           <span class="text-xs font-mono text-gray-400 uppercase">// GALLERY & CONCEPT ART</span>
@@ -380,7 +392,7 @@
                class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
             <img src="images/astrid_body.webp" alt="Astrid Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
             <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
-            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-cyan-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-teal-accent bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
               01 // ASTRID
             </div>
           </div>
@@ -443,7 +455,7 @@
 
   <!-- LIGHTBOX / FULLSCREEN GALLERY PREVIEW MODAL -->
   <div id="galleryModalOverlay" onclick="closeGalleryModal(event)" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    <div id="galleryModalContainer" class="bg-gray-950 border border-cyan-500/30 rounded-2xl max-w-4xl w-full p-4 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
+    <div id="galleryModalContainer" class="bg-gray-950 border border-teal-accent rounded-2xl max-w-4xl w-full p-4 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
       
       <button onclick="forceCloseGalleryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl w-8 h-8 rounded-full bg-black/60 z-20 flex items-center justify-center transition">
         &times;
@@ -455,7 +467,7 @@
 
       <div class="mt-3 px-2 flex items-center justify-between font-mono text-xs text-gray-300">
         <span id="galleryModalTitle">// ASSET PREVIEW</span>
-        <span class="text-cyan-400">死: ONE HIT KILL</span>
+        <span class="text-teal-accent">死: ONE HIT KILL</span>
       </div>
     </div>
   </div>
@@ -464,13 +476,13 @@
   <footer class="w-full border-t border-white/10 bg-black py-8 mt-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center space-x-6 text-xl text-gray-400">
-        <a href="#" class="hover:text-cyan-400 transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="hover:text-cyan-400 transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="hover:text-cyan-400 transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="#" class="hover:text-cyan-400 transition" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" class="hover:text-teal-accent transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="hover:text-teal-accent transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="hover:text-teal-accent transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" class="hover:text-teal-accent transition" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
       <div class="text-xs text-gray-400 text-center md:text-right font-sans">
-        Available now on <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-cyan-400">Spawn.co</a>
+        Available now on <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-teal-accent">Spawn.co</a>
       </div>
     </div>
   </footer>
@@ -491,7 +503,7 @@
       astrid: {
         title: "Astrid",
         element: "ELEMENT: ICE",
-        elementClass: "text-cyan-400",
+        elementClass: "text-teal-accent",
         difficulty: "9/10",
         parry: "110ms",
         bodyImg: "images/astrid_body.webp",
