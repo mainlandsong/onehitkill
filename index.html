@@ -357,7 +357,7 @@
           ◄
         </button>
 
-        <!-- CENTER DISPLAY: VERTICAL CROP VIEWPORT FOR SWORD SPRITE SHEET -->
+        <!-- CENTER DISPLAY: BACKGROUND SPRITE VIEWPORT FOR PERFECT CENTERING -->
         <div class="relative flex-grow h-48 sm:h-56 md:h-64 rounded-xl border border-white/10 bg-black/90 overflow-hidden flex items-center justify-center shadow-inner">
           
           <!-- UP / DOWN ARROW OVERLAYS FOR TIER SCROLLING -->
@@ -371,11 +371,10 @@
             </button>
           </div>
 
-          <!-- SPRITE CONTAINER: MOVES UP/DOWN TO SHOW SPECIFIC SWORD TIER -->
-          <div class="w-full h-full relative overflow-hidden flex items-center justify-center">
-            <img id="swordSprite" src="images/swords/sword_fire.webp" alt="Elemental Sword Tier" 
-                 class="absolute w-auto max-w-none transition-all duration-500 ease-out" 
-                 style="height: 800%; top: 0%; left: 50%; transform: translateX(-50%);">
+          <!-- SPRITE FRAME: USES BACKGROUND POSITION TO CENTER EACH SWORD EXACTLY -->
+          <div id="swordSpriteFrame" 
+               class="w-full h-full transition-all duration-300 ease-out" 
+               style="background-repeat: no-repeat; background-position: center 0%; background-size: contain;">
           </div>
 
         </div>
@@ -700,13 +699,14 @@
       document.getElementById('swordDescription').innerText = blade.desc;
       document.getElementById('tierBadge').innerText = `TIER ${currentTierIndex + 1} OF 8`;
 
-      // Update Sprite Image Source
-      const spriteImg = document.getElementById('swordSprite');
-      spriteImg.src = blade.image;
-
-      // Calculate vertical offset percentage for sprite sheet (8 tiers, 12.5% per frame)
-      const topOffsetPercent = -(currentTierIndex * 12.5);
-      spriteImg.style.top = `${topOffsetPercent}%`;
+      // Update Sprite Frame Background
+      const frame = document.getElementById('swordSpriteFrame');
+      frame.style.backgroundImage = `url('${blade.image}')`;
+      
+      // Calculate background position percentage (0% for Tier 1 to 100% for Tier 8)
+      const posPercent = (currentTierIndex / 7) * 100;
+      frame.style.backgroundPosition = `center ${posPercent.toFixed(4)}%`;
+      frame.style.backgroundSize = "contain";
 
       // Update Top Nav Button Styling
       for (let i = 0; i < elementalBlades.length; i++) {
