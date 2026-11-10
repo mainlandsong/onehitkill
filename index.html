@@ -145,20 +145,8 @@
 
     <!-- 8 BOSS CARDS GRID -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- BOSS 1: ASTRID -->
-      <div onclick="openBossModal('astrid')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
-          <img src="images/astrid_head.webp" alt="Astrid" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
-          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">01</span>
-        </div>
-        <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">ELEMENT: ICE</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Composed First Breaker who commands the Celestial Borealis to freeze parry windows.</p>
-      </div>
-
-      <!-- BOSS 2: IGNIS -->
+       
+      <!-- BOSS 1: IGNIS -->
       <div onclick="openBossModal('ignis')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
         <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
           <img src="images/ingnis_head.webp" alt="Ignis" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
@@ -168,6 +156,18 @@
         <span class="text-[10px] font-mono text-red-500 tracking-widest uppercase">ELEMENT: FIRE</span>
         <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-red-500 transition">Ignis</h3>
         <p class="text-xs text-gray-400 mt-1 line-clamp-2">Wields the flame-infused Claymore of Phoenix Ascension with crushing posture strikes.</p>
+      </div>
+
+      <!-- BOSS 2: ASTRID -->
+      <div onclick="openBossModal('astrid')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/astrid_head.webp" alt="Astrid" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">01</span>
+        </div>
+        <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">ELEMENT: ICE</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Composed Breaker who commands the Celestial Borealis to freeze parry windows.</p>
       </div>
 
       <!-- BOSS 3: TARIQ -->
@@ -354,7 +354,7 @@
         difficulty: "9/10",
         parry: "110ms",
         bodyImg: "images/astrid_body.webp",
-        lore: "A composed First Breaker who commands the Celestial Borealis. Her icy blade slows opponent reaction speeds and punishes rushed thrusts with razor-thin parry windows.",
+        lore: "A composed Breaker who commands the Celestial Borealis. Her icy blade slows opponent reaction speeds and punishes rushed thrusts with razor-thin parry windows.",
         traits: ["Frost Stance Slow", "Tight Parry Window", "Celestial Borealis Counter"]
       },
       ignis: {
