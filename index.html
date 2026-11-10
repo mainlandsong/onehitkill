@@ -325,19 +325,76 @@
     </div>
   </div>
 
-  <!-- SECTION 2: WEAPONS -->
+  <!-- SECTION 2: ELEMENTAL BLADES (INTERACTIVE SPRITE CAROUSEL) -->
   <section id="weapons" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
-    <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// ARSENAL</span>
-    <h2 class="text-3xl font-bold text-white font-custom mb-8 mt-1">BLADES OF DESTINY</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="p-6 rounded-xl border border-white/10 bg-gray-900/60 backdrop-blur-sm">
-        <h3 class="font-custom text-2xl text-white font-bold">Shadow Katana</h3>
-        <p class="text-xs text-gray-400 mt-2 font-light">Balanced reach, ultra-fast parry window recovery.</p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+      <div>
+        <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// ARSENAL</span>
+        <h2 class="text-3xl font-bold text-white font-custom mt-1">ELEMENTAL BLADES</h2>
       </div>
-      <div class="p-6 rounded-xl border border-white/10 bg-gray-900/60 backdrop-blur-sm">
-        <h3 class="font-custom text-2xl text-white font-bold">Heavy Nodachi</h3>
-        <p class="text-xs text-gray-400 mt-2 font-light">High stamina drain, massive guard break potential.</p>
+      <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Use ◄ ► for Elements | Use ▲ ▼ for Evolution Tiers</p>
+    </div>
+
+    <!-- INTERACTIVE SWORD CAROUSEL CONTAINER -->
+    <div class="w-full bg-gradient-to-b from-gray-950 via-black to-gray-950 border border-teal-accent/30 rounded-2xl p-6 md:p-10 shadow-2xl relative overflow-hidden flex flex-col items-center">
+      
+      <!-- TOP NAVIGATION BAR: ELEMENT SELECTOR BUTTONS -->
+      <div class="flex items-center gap-2 md:gap-4 overflow-x-auto max-w-full pb-2 mb-6 scrollbar-none">
+        <button onclick="selectElement(0)" id="btnElem0" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-teal-accent bg-teal-accent text-black font-bold">FIRE</button>
+        <button onclick="selectElement(1)" id="btnElem1" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">ICE</button>
+        <button onclick="selectElement(2)" id="btnElem2" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">VENOM</button>
+        <button onclick="selectElement(3)" id="btnElem3" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">LIGHT</button>
+        <button onclick="selectElement(4)" id="btnElem4" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">VOID</button>
+        <button onclick="selectElement(5)" id="btnElem5" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">DEATH</button>
+        <button onclick="selectElement(6)" id="btnElem6" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">LIGHTNING</button>
       </div>
+
+      <!-- MAIN CAROUSEL VIEWPORT WITH DUAL DIRECTION CONTROL BUTTONS -->
+      <div class="relative w-full max-w-3xl flex items-center justify-between gap-4 my-4">
+        
+        <!-- LEFT ARROW: PREVIOUS ELEMENT -->
+        <button onclick="prevElement()" aria-label="Previous Element" class="w-12 h-12 rounded-full border border-teal-accent/40 bg-black/80 hover:bg-teal-accent hover:text-black text-teal-accent text-xl flex items-center justify-center transition shadow-lg z-20 flex-shrink-0">
+          ◄
+        </button>
+
+        <!-- CENTER DISPLAY: VERTICAL CROP VIEWPORT FOR SWORD SPRITE SHEET -->
+        <div class="relative flex-grow h-48 sm:h-56 md:h-64 rounded-xl border border-white/10 bg-black/90 overflow-hidden flex items-center justify-center shadow-inner">
+          
+          <!-- UP / DOWN ARROW OVERLAYS FOR TIER SCROLLING -->
+          <div class="absolute right-3 top-0 bottom-0 flex flex-col justify-between py-3 z-20">
+            <button onclick="prevTier()" aria-label="Previous Tier" class="w-8 h-8 rounded-lg bg-gray-900/90 border border-white/20 hover:border-teal-accent text-teal-accent hover:text-white text-xs flex items-center justify-center transition">
+              ▲
+            </button>
+            <span id="tierBadge" class="text-[10px] font-mono text-gray-400 text-center font-bold">1 / 8</span>
+            <button onclick="nextTier()" aria-label="Next Tier" class="w-8 h-8 rounded-lg bg-gray-900/90 border border-white/20 hover:border-teal-accent text-teal-accent hover:text-white text-xs flex items-center justify-center transition">
+              ▼
+            </button>
+          </div>
+
+          <!-- SPRITE CONTAINER: MOVES UP/DOWN TO SHOW SPECIFIC SWORD TIER -->
+          <div class="w-full h-full relative overflow-hidden flex items-center justify-center">
+            <img id="swordSprite" src="images/swords/sword_fire.webp" alt="Elemental Sword Tier" 
+                 class="absolute w-auto max-w-none transition-all duration-500 ease-out" 
+                 style="height: 800%; top: 0%; left: 50%; transform: translateX(-50%);">
+          </div>
+
+        </div>
+
+        <!-- RIGHT ARROW: NEXT ELEMENT -->
+        <button onclick="nextElement()" aria-label="Next Element" class="w-12 h-12 rounded-full border border-teal-accent/40 bg-black/80 hover:bg-teal-accent hover:text-black text-teal-accent text-xl flex items-center justify-center transition shadow-lg z-20 flex-shrink-0">
+          ►
+        </button>
+      </div>
+
+      <!-- BOTTOM INFO DISPLAY: SWORD NAME & ELEMENT DETAILS -->
+      <div class="w-full max-w-xl text-center mt-4 space-y-1">
+        <span id="swordElementTag" class="text-xs font-mono text-teal-accent tracking-widest uppercase font-bold">ELEMENT: FIRE</span>
+        <h3 id="swordName" class="font-custom text-3xl md:text-4xl text-white font-bold">The Phoenix Ascendant</h3>
+        <p id="swordDescription" class="text-xs text-gray-400 font-light max-w-lg mx-auto mt-2 leading-relaxed">
+          Forged from primordial flame embers. Heavy slashes shatter opponent stamina and ignite their guard.
+        </p>
+      </div>
+
     </div>
   </section>
 
@@ -487,8 +544,9 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT FOR BOSS & GALLERY MODALS -->
+  <!-- JAVASCRIPT FOR BOSS, CAROUSEL, AND GALLERY MODALS -->
   <script>
+    /* BOSS MODAL DATA */
     const bossData = {
       ignis: {
         title: "Ignis",
@@ -618,6 +676,74 @@
       container.classList.add('scale-95');
     }
 
+    /* ELEMENTAL BLADES SPRITE CAROUSEL LOGIC */
+    const elementalBlades = [
+      { name: "The Phoenix Ascendant", element: "ELEMENT: FIRE", color: "#ef4444", image: "images/swords/sword_fire.webp", desc: "Forged from primordial flame embers. Heavy slashes shatter opponent stamina and ignite their guard." },
+      { name: "The Celestial Borealis", element: "ELEMENT: ICE", color: "#3ff5d8", image: "images/swords/sword_ice.webp", desc: "Commanded by Astrid. Frost aura slows reaction speeds and freezes enemy parry windows." },
+      { name: "The World Serpent", element: "ELEMENT: VENOM", color: "#34d399", image: "images/swords/sword_venom.webp", desc: "Wielded by Tariq. Poisonous thrusts steadily erode enemy health and stamina pools over time." },
+      { name: "Divine Sovereign Sunstone Jian", element: "ELEMENT: LIGHT", color: "#fbbf24", image: "images/swords/sword_light.webp", desc: "Radiates blinding solar light to obscure stance telegraphs and inflict high posture damage." },
+      { name: "The Event Horizon", element: "ELEMENT: VOID", color: "#c084fc", image: "images/swords/sword_void.webp", desc: "Distorts space and gravitational pull to execute phantom thrusts that bypass frontal blocks." },
+      { name: "Monarch of the Void-Grave", element: "ELEMENT: DEATH", color: "#9ca3af", image: "images/swords/sword_death.webp", desc: "Forged in the underworld realm. Each clean hit harvests soul remnants to power lethal counters." },
+      { name: "The Apex Stormlord", element: "ELEMENT: LIGHTNING", color: "#f59e0b", image: "images/swords/sword_lightning.webp", desc: "Commanded by Teresa. Electrifies steel for near-instantaneous stance transition strikes." }
+    ];
+
+    let currentElemIndex = 0;
+    let currentTierIndex = 0; // 0 to 7 (8 tiers)
+
+    function updateCarouselDisplay() {
+      const blade = elementalBlades[currentElemIndex];
+      
+      // Update Text Details
+      document.getElementById('swordName').innerText = blade.name;
+      document.getElementById('swordElementTag').innerText = blade.element;
+      document.getElementById('swordElementTag').style.color = blade.color;
+      document.getElementById('swordDescription').innerText = blade.desc;
+      document.getElementById('tierBadge').innerText = `TIER ${currentTierIndex + 1} OF 8`;
+
+      // Update Sprite Image Source
+      const spriteImg = document.getElementById('swordSprite');
+      spriteImg.src = blade.image;
+
+      // Calculate vertical offset percentage for sprite sheet (8 tiers, 12.5% per frame)
+      const topOffsetPercent = -(currentTierIndex * 12.5);
+      spriteImg.style.top = `${topOffsetPercent}%`;
+
+      // Update Top Nav Button Styling
+      for (let i = 0; i < elementalBlades.length; i++) {
+        const btn = document.getElementById(`btnElem${i}`);
+        if (i === currentElemIndex) {
+          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition bg-teal-accent text-black font-bold border-teal-accent";
+        } else {
+          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white";
+        }
+      }
+    }
+
+    function selectElement(index) {
+      currentElemIndex = index;
+      updateCarouselDisplay();
+    }
+
+    function prevElement() {
+      currentElemIndex = (currentElemIndex - 1 + elementalBlades.length) % elementalBlades.length;
+      updateCarouselDisplay();
+    }
+
+    function nextElement() {
+      currentElemIndex = (currentElemIndex + 1) % elementalBlades.length;
+      updateCarouselDisplay();
+    }
+
+    function prevTier() {
+      currentTierIndex = (currentTierIndex - 1 + 8) % 8;
+      updateCarouselDisplay();
+    }
+
+    function nextTier() {
+      currentTierIndex = (currentTierIndex + 1) % 8;
+      updateCarouselDisplay();
+    }
+
     /* GALLERY LIGHTBOX INTERACTIVITY */
     function openGalleryModal(imgSrc, title) {
       document.getElementById('galleryModalImg').src = imgSrc;
@@ -650,8 +776,19 @@
       if (e.key === 'Escape') {
         forceCloseModal();
         forceCloseGalleryModal();
+      } else if (e.key === 'ArrowLeft') {
+        prevElement();
+      } else if (e.key === 'ArrowRight') {
+        nextElement();
+      } else if (e.key === 'ArrowUp') {
+        prevTier();
+      } else if (e.key === 'ArrowDown') {
+        nextTier();
       }
     });
+
+    // Initialize display on load
+    updateCarouselDisplay();
   </script>
 
 </body>
