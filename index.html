@@ -8,21 +8,33 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Noto Serif (Light 300 & Regular 400 for slim body text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Force deep dark ink & ash background globally */
+    /* Custom Uploaded Title Font from fonts/Minaisgone.woff2 */
+    @font-face {
+      font-family: 'Minaisgone';
+      src: url('fonts/Minaisgone.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    .font-custom {
+      font-family: 'Minaisgone', serif;
+    }
+
+    /* Slim Noto Serif globally for body text */
     html, body {
       background-color: #080809 !important;
       color: #F3F4F6 !important;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Noto Serif', serif;
+      font-weight: 300;
     }
-    .font-cinzel {
-      font-family: 'Cinzel', serif;
-    }
+
     /* Logo-derived Electric Cyan Glow for primary actions */
     .btn-glow-cyan {
       box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
@@ -32,15 +44,13 @@
       box-shadow: 0 0 30px rgba(56, 189, 248, 0.9);
       transform: translateY(-2px);
     }
-    /* Logo-derived Crimson Glow for secondary highlights */
-    .border-crimson-glow {
-      box-shadow: 0 0 15px rgba(220, 38, 38, 0.25);
-    }
+    
     /* Cyan & Red Ember Background Gradient */
     .bg-ash-glow {
       background: radial-gradient(circle at 75% 25%, rgba(6, 182, 212, 0.15) 0%, rgba(8, 8, 9, 0) 50%),
                   radial-gradient(circle at 15% 75%, rgba(185, 28, 28, 0.12) 0%, rgba(8, 8, 9, 0) 60%);
     }
+
     /* Boss Card Hover Effects */
     .boss-card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,7 +64,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between bg-ash-glow relative overflow-x-hidden bg-[#080809] text-gray-100">
 
-  <!-- BACKGROUND AMBIENT SPARK ACCENTS (Cyan & Red Embers) -->
+  <!-- BACKGROUND AMBIENT SPARK ACCENTS -->
   <div class="absolute top-1/4 left-10 w-2 h-2 bg-cyan-400 rounded-full blur-[1px] opacity-80 animate-pulse"></div>
   <div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-red-600 rounded-full blur-[1px] opacity-60 animate-ping"></div>
 
@@ -65,12 +75,12 @@
       <!-- LOGO IMAGE FROM GITHUB REPO -->
       <a href="#" class="flex items-center gap-3 group">
         <img src="images/logo.png" alt="死: ONE HIT KILL Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition duration-300">
-        <span class="hidden sm:inline-block font-black text-lg md:text-xl tracking-wider text-white font-cinzel">
+        <span class="hidden sm:inline-block text-lg md:text-xl tracking-wider text-white font-custom">
           ONE HIT KILL
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-widest text-gray-300">
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-widest text-gray-300 font-sans">
         <a href="#bosses" class="hover:text-cyan-400 transition">BOSSES</a>
         <a href="#weapons" class="hover:text-cyan-400 transition">WEAPONS</a>
         <a href="#lore" class="hover:text-cyan-400 transition">WORLD (LORE)</a>
@@ -78,7 +88,7 @@
       </nav>
 
       <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-         class="btn-glow-cyan bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-extrabold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase">
+         class="btn-glow-cyan bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-extrabold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase font-sans">
         PLAY NOW
       </a>
     </div>
@@ -88,23 +98,23 @@
   <main class="max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-44 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
     <div class="lg:col-span-6 space-y-8 z-10">
       
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/50 text-cyan-400 text-xs font-semibold tracking-widest">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-800/50 text-cyan-400 text-xs font-semibold tracking-widest font-sans">
         <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> SPAWN.CO ORIGINAL
       </div>
 
       <div class="space-y-2">
-        <h2 class="text-cyan-400 font-cinzel text-lg md:text-xl tracking-widest uppercase">死: ONE HIT KILL</h2>
-        <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight uppercase leading-none font-cinzel drop-shadow-md">
+        <h2 class="text-cyan-400 font-custom text-lg md:text-xl tracking-widest uppercase">死: ONE HIT KILL</h2>
+        <h1 class="text-5xl md:text-7xl text-white tracking-tight uppercase leading-none font-custom drop-shadow-md">
           ONE STRIKE.<br>
           <span class="text-gray-300">ONE DECISION.</span>
         </h1>
       </div>
 
-      <p class="text-gray-300 text-base md:text-lg max-w-xl leading-relaxed">
+      <p class="text-gray-300 text-base md:text-lg max-w-xl leading-relaxed font-light">
         A precision 1v1 sword duel. One clean hit ends everything. Master stamina, parry the blade, and dominate high-stakes duels in a realm of shadow and ash.
       </p>
 
-      <div class="flex flex-wrap items-center gap-4 pt-2">
+      <div class="flex flex-wrap items-center gap-4 pt-2 font-sans">
         <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
            class="btn-glow-cyan bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-600 text-black font-extrabold text-sm px-8 py-4 rounded-full tracking-wider uppercase flex items-center gap-3">
           PLAY NOW <i class="fa-solid fa-play text-xs"></i>
@@ -130,10 +140,10 @@
         </div>
 
         <div class="z-10 self-end flex items-center gap-3 bg-black/80 border border-white/10 px-4 py-2 rounded-xl backdrop-blur-md">
-          <div class="w-8 h-8 rounded-full bg-cyan-950 border border-cyan-400/50 flex items-center justify-center text-cyan-400 text-xs font-bold font-cinzel">
+          <div class="w-8 h-8 rounded-full bg-cyan-950 border border-cyan-400/50 flex items-center justify-center text-cyan-400 text-xs font-bold font-custom">
             死
           </div>
-          <div class="text-xs">
+          <div class="text-xs font-sans">
             <p class="text-gray-400 leading-none">A Game by</p>
             <p class="text-white font-bold leading-tight">@chocopuff</p>
           </div>
@@ -147,7 +157,7 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
       <div>
         <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// BOSSES</span>
-        <h2 class="text-3xl font-bold text-white font-cinzel mt-1">THE GUARDIANS OF ASH</h2>
+        <h2 class="text-3xl font-bold text-white font-custom mt-1">THE GUARDIANS OF ASH</h2>
       </div>
       <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Select a boss guardian to inspect elemental combat data & fight details</p>
     </div>
@@ -163,8 +173,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">01</span>
         </div>
         <span class="text-[10px] font-mono text-red-500 tracking-widest uppercase">ELEMENT: FIRE</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-red-500 transition">Ignis</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Wields the flame-infused Claymore of Phoenix Ascension with crushing posture strikes.</p>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-red-500 transition">Ignis</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Wields the flame-infused Claymore of Phoenix Ascension with crushing posture strikes.</p>
       </div>
 
       <!-- BOSS 2: ASTRID -->
@@ -175,8 +185,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">02</span>
         </div>
         <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">ELEMENT: ICE</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Composed First Breaker who commands the Celestial Borealis to freeze parry windows.</p>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Composed First Breaker who commands the Celestial Borealis to freeze parry windows.</p>
       </div>
 
       <!-- BOSS 3: TARIQ -->
@@ -187,8 +197,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">03</span>
         </div>
         <span class="text-[10px] font-mono text-emerald-400 tracking-widest uppercase">ELEMENT: VENOM</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-emerald-400 transition">Tariq</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Master of the venomous curved scimitar, draining stamina with continuous fast thrusts.</p>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-emerald-400 transition">Tariq</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Master of the venomous curved scimitar, draining stamina with continuous fast thrusts.</p>
       </div>
 
       <!-- BOSS 4: TERESA -->
@@ -199,8 +209,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">04</span>
         </div>
         <span class="text-[10px] font-mono text-amber-400 tracking-widest uppercase">ELEMENT: LIGHTNING</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-amber-400 transition">Teresa</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Commands the Apex Stormlord longsword with high-voltage counter strikes.</p>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-amber-400 transition">Teresa</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Commands the Apex Stormlord longsword with high-voltage counter strikes.</p>
       </div>
 
       <!-- BOSS 5: MYSTERY GUARDIAN 5 -->
@@ -211,8 +221,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-500 bg-black/60 px-2 py-0.5 rounded border border-white/10">05</span>
         </div>
         <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase">ELEMENT: ???</span>
-        <h3 class="font-cinzel text-xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
-        <p class="text-xs text-gray-500 mt-1 line-clamp-2">An unrevealed guardian trial awaiting duelists who survive the outer grounds.</p>
+        <h3 class="font-custom text-2xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2 font-light">An unrevealed guardian trial awaiting duelists who survive the outer grounds.</p>
       </div>
 
       <!-- BOSS 6: MYSTERY GUARDIAN 6 -->
@@ -223,8 +233,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-500 bg-black/60 px-2 py-0.5 rounded border border-white/10">06</span>
         </div>
         <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase">ELEMENT: ???</span>
-        <h3 class="font-cinzel text-xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
-        <p class="text-xs text-gray-500 mt-1 line-clamp-2">An unrevealed guardian trial awaiting duelists who survive the outer grounds.</p>
+        <h3 class="font-custom text-2xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2 font-light">An unrevealed guardian trial awaiting duelists who survive the outer grounds.</p>
       </div>
 
       <!-- BOSS 7: MYSTERY GUARDIAN 7 -->
@@ -235,8 +245,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-gray-500 bg-black/60 px-2 py-0.5 rounded border border-white/10">07</span>
         </div>
         <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase">ELEMENT: ???</span>
-        <h3 class="font-cinzel text-xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
-        <p class="text-xs text-gray-500 mt-1 line-clamp-2">An unrevealed guardian trial guarding the threshold to the supreme court.</p>
+        <h3 class="font-custom text-2xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2 font-light">An unrevealed guardian trial guarding the threshold to the supreme court.</p>
       </div>
 
       <!-- BOSS 8: JAE KA BU -->
@@ -247,8 +257,8 @@
           <span class="absolute top-2 right-2 text-xs font-mono text-purple-400 bg-purple-950/80 px-2 py-0.5 rounded border border-purple-500/30">08</span>
         </div>
         <span class="text-[10px] font-mono text-purple-400 tracking-widest uppercase">ELEMENT: SPIRIT</span>
-        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-purple-400 transition">Jae Ka Bu</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Trial master commanding spiritual energy to disrupt directional stance reads.</p>
+        <h3 class="font-custom text-2xl text-white font-bold mt-0.5 group-hover:text-purple-400 transition">Jae Ka Bu</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2 font-light">Trial master commanding spiritual energy to disrupt directional stance reads.</p>
       </div>
 
     </div>
@@ -280,10 +290,10 @@
         <div class="md:col-span-7 space-y-4">
           <div>
             <span class="text-[10px] font-mono tracking-widest uppercase" id="modalElement">ELEMENT</span>
-            <h3 class="font-cinzel text-3xl text-white font-bold" id="modalTitle">Boss Title</h3>
+            <h3 class="font-custom text-3xl text-white font-bold" id="modalTitle">Boss Title</h3>
           </div>
 
-          <p class="text-xs text-gray-300 leading-relaxed border-t border-b border-white/10 py-3" id="modalLore">
+          <p class="text-xs text-gray-300 leading-relaxed border-t border-b border-white/10 py-3 font-light" id="modalLore">
             Lore details will appear here.
           </p>
 
@@ -295,7 +305,7 @@
           </div>
 
           <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-             class="btn-glow-cyan w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4">
+             class="btn-glow-cyan w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-extrabold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
             CHALLENGE IN GAME
           </a>
         </div>
@@ -307,15 +317,15 @@
   <!-- SECTION 2: WEAPONS -->
   <section id="weapons" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// ARSENAL</span>
-    <h2 class="text-3xl font-bold text-white font-cinzel mb-8 mt-1">BLADES OF DESTINY</h2>
+    <h2 class="text-3xl font-bold text-white font-custom mb-8 mt-1">BLADES OF DESTINY</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="p-6 rounded-xl border border-white/10 bg-gray-900/60 backdrop-blur-sm">
-        <h3 class="font-cinzel text-xl text-white font-bold">Shadow Katana</h3>
-        <p class="text-xs text-gray-400 mt-2">Balanced reach, ultra-fast parry window recovery.</p>
+        <h3 class="font-custom text-2xl text-white font-bold">Shadow Katana</h3>
+        <p class="text-xs text-gray-400 mt-2 font-light">Balanced reach, ultra-fast parry window recovery.</p>
       </div>
       <div class="p-6 rounded-xl border border-white/10 bg-gray-900/60 backdrop-blur-sm">
-        <h3 class="font-cinzel text-xl text-white font-bold">Heavy Nodachi</h3>
-        <p class="text-xs text-gray-400 mt-2">High stamina drain, massive guard break potential.</p>
+        <h3 class="font-custom text-2xl text-white font-bold">Heavy Nodachi</h3>
+        <p class="text-xs text-gray-400 mt-2 font-light">High stamina drain, massive guard break potential.</p>
       </div>
     </div>
   </section>
@@ -323,8 +333,8 @@
   <!-- SECTION 3: WORLD (LORE) -->
   <section id="lore" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// THE REALM</span>
-    <h2 class="text-3xl font-bold text-white font-cinzel mb-4 mt-1">WORLD OF SHADOW & ASH</h2>
-    <p class="text-gray-300 text-sm max-w-3xl leading-relaxed">
+    <h2 class="text-3xl font-bold text-white font-custom mb-4 mt-1">WORLD OF SHADOW & ASH</h2>
+    <p class="text-gray-300 text-sm max-w-3xl leading-relaxed font-light">
       Set in ruined duel arenas across ancient mythic grounds, warriors gather to test their precision where armor offers no protection and victory is determined in a fraction of a second.
     </p>
   </section>
@@ -332,7 +342,7 @@
   <!-- SECTION 4: MEDIA -->
   <section id="media" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// SHOWCASE</span>
-    <h2 class="text-3xl font-bold text-white font-cinzel mb-6 mt-1">MEDIA & TRAILERS</h2>
+    <h2 class="text-3xl font-bold text-white font-custom mb-6 mt-1">MEDIA & TRAILERS</h2>
     <div class="aspect-video w-full max-w-4xl bg-gray-900/80 rounded-xl border border-white/10 flex items-center justify-center">
       <p class="text-gray-400 text-sm font-mono">// MAIN TRAILER VIDEO PLAYER</p>
     </div>
@@ -347,7 +357,7 @@
         <a href="#" class="hover:text-cyan-400 transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         <a href="#" class="hover:text-cyan-400 transition" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
       </div>
-      <div class="text-xs text-gray-400 text-center md:text-right">
+      <div class="text-xs text-gray-400 text-center md:text-right font-sans">
         Available now on <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-cyan-400">Spawn.co</a>
       </div>
     </div>
