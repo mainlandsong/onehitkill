@@ -8,13 +8,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Google Fonts: Noto Serif (Light 300 & Regular 400 for slim body text) -->
+  <!-- Google Fonts: Noto Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Custom Uploaded Title Font from fonts/Minaisgone.woff2 */
+    /* Custom Title Font */
     @font-face {
       font-family: 'Minaisgone';
       src: url('fonts/Minaisgone.woff2') format('woff2');
@@ -35,7 +35,7 @@
       font-weight: 300;
     }
 
-    /* Logo-derived Electric Cyan Glow for primary actions */
+    /* Logo-derived Electric Cyan Glow */
     .btn-glow-cyan {
       box-shadow: 0 0 20px rgba(6, 182, 212, 0.6);
       transition: all 0.3s ease;
@@ -51,14 +51,14 @@
                   radial-gradient(circle at 15% 75%, rgba(185, 28, 28, 0.12) 0%, rgba(8, 8, 9, 0) 60%);
     }
 
-    /* Boss Card Hover Effects */
-    .boss-card {
+    /* Card & Gallery Hover Effects */
+    .boss-card, .gallery-card {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .boss-card:hover {
-      transform: translateY(-6px) scale(1.03);
+    .boss-card:hover, .gallery-card:hover {
+      transform: translateY(-4px) scale(1.02);
       border-color: rgba(6, 182, 212, 0.6);
-      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
+      box-shadow: 0 10px 25px -10px rgba(6, 182, 212, 0.3);
     }
   </style>
 </head>
@@ -72,7 +72,7 @@
   <header class="w-full border-b border-cyan-900/30 bg-[#080809]/90 backdrop-blur-md fixed top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- LOGO IMAGE FROM GITHUB REPO -->
+      <!-- LOGO IMAGE -->
       <a href="#" class="flex items-center gap-3 group">
         <img src="images/logo.png" alt="死: ONE HIT KILL Logo" class="h-12 w-auto object-contain group-hover:scale-105 transition duration-300">
         <span class="hidden sm:inline-block text-lg md:text-xl tracking-wider text-white font-custom">
@@ -126,7 +126,7 @@
       </div>
     </div>
 
-    <!-- RIGHT HERO DISPLAY / LOGO SHOWCASE -->
+    <!-- RIGHT HERO DISPLAY -->
     <div class="lg:col-span-6 relative flex justify-center items-center">
       <div class="absolute w-72 h-72 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
       
@@ -134,7 +134,6 @@
         <div class="absolute -top-10 -right-10 w-96 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rotate-45 blur-[1px]"></div>
         <div class="absolute top-1/2 -left-20 w-[500px] h-0.5 bg-gradient-to-r from-transparent via-red-600/40 to-transparent -rotate-12"></div>
 
-        <!-- HERO LOGO EMBLEM DISPLAY -->
         <div class="z-10 flex flex-col items-center justify-center my-auto py-2">
           <img src="images/logo.png" alt="死: One Hit Kill" class="max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.5)]">
         </div>
@@ -152,7 +151,7 @@
     </div>
   </main>
 
-  <!-- SECTION 1: BOSSES GRID (8 SLOTS) -->
+  <!-- SECTION 1: BOSSES GRID -->
   <section id="bosses" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
       <div>
@@ -305,7 +304,7 @@
           </div>
 
           <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-             class="btn-glow-cyan w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-extrabold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
+             class="btn-glow-cyan w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-bold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
             CHALLENGE IN GAME
           </a>
         </div>
@@ -339,14 +338,127 @@
     </p>
   </section>
 
-  <!-- SECTION 4: MEDIA -->
+  <!-- SECTION 4: MEDIA & TRAILERS (EMBEDDED YOUTUBE + 6-BOX CONCEPT ART GALLERY) -->
   <section id="media" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
-    <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// SHOWCASE</span>
-    <h2 class="text-3xl font-bold text-white font-custom mb-6 mt-1">MEDIA & TRAILERS</h2>
-    <div class="aspect-video w-full max-w-4xl bg-gray-900/80 rounded-xl border border-white/10 flex items-center justify-center">
-      <p class="text-gray-400 text-sm font-mono">// MAIN TRAILER VIDEO PLAYER</p>
+    <div class="mb-8">
+      <span class="text-xs font-mono text-cyan-400 tracking-widest uppercase">// SHOWCASE</span>
+      <h2 class="text-3xl font-bold text-white font-custom mt-1">MEDIA & TRAILERS</h2>
+    </div>
+
+    <!-- MAIN MEDIA LAYOUT: YOUTUBE VIDEO (LEFT) + 6 SCREENSHOT BOXES (RIGHT) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT: YOUTUBE TRAILER PLAYER (7 COLS ON DESKTOP) -->
+      <div class="lg:col-span-7 w-full">
+        <div class="aspect-video w-full rounded-2xl border border-cyan-500/30 overflow-hidden bg-black shadow-2xl relative group">
+          <iframe 
+            class="w-full h-full" 
+            src="https://www.youtube-nocookie.com/embed/cWTVHlZ6M6o?rel=0" 
+            title="死: ONE HIT KILL Official Trailer" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; webshare" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="flex items-center justify-between mt-3 px-1 text-xs font-mono text-gray-400">
+          <span>// OFFICIAL GAMEPLAY TRAILER</span>
+          <span class="text-cyan-400">SPAWN.CO ORIGINAL</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: 6-BOX SCREENSHOT / CONCEPT ART GRID (5 COLS ON DESKTOP) -->
+      <div class="lg:col-span-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono text-gray-400 uppercase">// GALLERY & CONCEPT ART</span>
+          <span class="text-[11px] font-mono text-gray-500">6 ASSETS</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          
+          <!-- BOX 1 -->
+          <div onclick="openGalleryModal('images/astrid_body.webp', 'Astrid - Celestial Borealis')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
+            <img src="images/astrid_body.webp" alt="Astrid Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-cyan-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+              01 // ASTRID
+            </div>
+          </div>
+
+          <!-- BOX 2 -->
+          <div onclick="openGalleryModal('images/ignis_body.webp', 'Ignis - Phoenix Ascension')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
+            <img src="images/ignis_body.webp" alt="Ignis Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-red-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+              02 // IGNIS
+            </div>
+          </div>
+
+          <!-- BOX 3 -->
+          <div onclick="openGalleryModal('images/tariq_body.webp', 'Tariq - Venom Flow')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
+            <img src="images/tariq_body.webp" alt="Tariq Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-emerald-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+              03 // TARIQ
+            </div>
+          </div>
+
+          <!-- BOX 4 -->
+          <div onclick="openGalleryModal('images/teresa_body.webp', 'Teresa - Apex Stormlord')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
+            <img src="images/teresa_body.webp" alt="Teresa Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-amber-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+              04 // TERESA
+            </div>
+          </div>
+
+          <!-- BOX 5 -->
+          <div onclick="openGalleryModal('images/jkb_body.webp', 'Jae Ka Bu - Spirit Echo')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-purple-900/40 overflow-hidden relative cursor-pointer group">
+            <img src="images/jkb_body.webp" alt="Jae Ka Bu Stance" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-300">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-purple-400 bg-black/75 px-1.5 py-0.5 rounded border border-purple-500/30 truncate">
+              05 // JAE KA BU
+            </div>
+          </div>
+
+          <!-- BOX 6 -->
+          <div onclick="openGalleryModal('images/unknown_body.webp', 'Ruined Duel Grounds - Concept')" 
+               class="gallery-card aspect-square bg-gray-950 rounded-xl border border-white/10 overflow-hidden relative cursor-pointer group">
+            <img src="images/unknown_body.webp" alt="Concept Art" class="w-full h-full object-cover object-bottom group-hover:scale-110 transition duration-300 opacity-70">
+            <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition duration-300"></div>
+            <div class="absolute bottom-2 left-2 right-2 text-[10px] font-mono text-gray-400 bg-black/75 px-1.5 py-0.5 rounded border border-white/10 truncate">
+              06 // REALM
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- LIGHTBOX / FULLSCREEN GALLERY PREVIEW MODAL -->
+  <div id="galleryModalOverlay" onclick="closeGalleryModal(event)" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="galleryModalContainer" class="bg-gray-950 border border-cyan-500/30 rounded-2xl max-w-4xl w-full p-4 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
+      
+      <button onclick="forceCloseGalleryModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl w-8 h-8 rounded-full bg-black/60 z-20 flex items-center justify-center transition">
+        &times;
+      </button>
+
+      <div class="relative w-full aspect-[16/10] bg-black rounded-xl overflow-hidden flex items-center justify-center">
+        <img id="galleryModalImg" src="" alt="Gallery Preview" class="w-full h-full object-contain">
+      </div>
+
+      <div class="mt-3 px-2 flex items-center justify-between font-mono text-xs text-gray-300">
+        <span id="galleryModalTitle">// ASSET PREVIEW</span>
+        <span class="text-cyan-400">死: ONE HIT KILL</span>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="w-full border-t border-white/10 bg-black py-8 mt-12">
@@ -363,7 +475,7 @@
     </div>
   </footer>
 
-  <!-- MODAL SCRIPT -->
+  <!-- JAVASCRIPT FOR BOSS & GALLERY MODALS -->
   <script>
     const bossData = {
       ignis: {
@@ -494,8 +606,39 @@
       container.classList.add('scale-95');
     }
 
+    /* GALLERY LIGHTBOX INTERACTIVITY */
+    function openGalleryModal(imgSrc, title) {
+      document.getElementById('galleryModalImg').src = imgSrc;
+      document.getElementById('galleryModalTitle').innerText = `// ${title.toUpperCase()}`;
+
+      const overlay = document.getElementById('galleryModalOverlay');
+      const container = document.getElementById('galleryModalContainer');
+
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      container.classList.remove('scale-95');
+      container.classList.add('scale-100');
+    }
+
+    function closeGalleryModal(event) {
+      if (event.target.id === 'galleryModalOverlay') {
+        forceCloseGalleryModal();
+      }
+    }
+
+    function forceCloseGalleryModal() {
+      const overlay = document.getElementById('galleryModalOverlay');
+      const container = document.getElementById('galleryModalContainer');
+
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      container.classList.remove('scale-100');
+      container.classList.add('scale-95');
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') forceCloseModal();
+      if (e.key === 'Escape') {
+        forceCloseModal();
+        forceCloseGalleryModal();
+      }
     });
   </script>
 
