@@ -133,152 +133,155 @@
     </div>
   </main>
 
-  <!-- SECTION 1: BOSSES (8-SLOT GRID WITH HOVER & MODALS) -->
+  <!-- SECTION 1: BOSSES GRID (8 SLOTS) -->
   <section id="bosses" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
       <div>
-        <span class="text-xs font-mono text-red-500 tracking-widest uppercase">// DUELISTS & BOSSES</span>
+        <span class="text-xs font-mono text-red-500 tracking-widest uppercase">// BOSSES</span>
         <h2 class="text-3xl font-bold text-white font-cinzel mt-1">THE GUARDIANS OF ASH</h2>
       </div>
-      <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Select a duel guardian to inspect combat data & fight video</p>
+      <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Select a boss guardian to inspect elemental combat data & fight details</p>
     </div>
 
     <!-- 8 BOSS CARDS GRID -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       
-      <!-- BOSS 1 -->
-      <div onclick="openBossModal(1)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">01</span>
+      <!-- BOSS 1: ASTRID -->
+      <div onclick="openBossModal('astrid')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/astrid_head.webp" alt="Astrid" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">01</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: MASTER</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">The Ashen Ronin</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Relentless stance changes with lightning parry windows.</p>
+        <span class="text-[10px] font-mono text-cyan-400 tracking-widest uppercase">ELEMENT: ICE</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-cyan-400 transition">Astrid</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Composed First Breaker who commands the Celestial Borealis to freeze parry windows.</p>
       </div>
 
-      <!-- BOSS 2 -->
-      <div onclick="openBossModal(2)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">02</span>
+      <!-- BOSS 2: IGNIS -->
+      <div onclick="openBossModal('ignis')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/ingnis_head.webp" alt="Ignis" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">02</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: ELITE</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Shadow Kaeda</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Fast dual-blade stance requiring directional rhythm counters.</p>
+        <span class="text-[10px] font-mono text-red-500 tracking-widest uppercase">ELEMENT: FIRE</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-red-500 transition">Ignis</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Wields the flame-infused Claymore of Phoenix Ascension with crushing posture strikes.</p>
       </div>
 
-      <!-- BOSS 3 -->
-      <div onclick="openBossModal(3)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">03</span>
+      <!-- BOSS 3: TARIQ -->
+      <div onclick="openBossModal('tariq')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/tariq_head.webp" alt="Tariq" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">03</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: GRANDMASTER</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Grandmaster Kensei</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Unforgiving counter-attacks; punishes reckless stamina expenditure.</p>
+        <span class="text-[10px] font-mono text-emerald-400 tracking-widest uppercase">ELEMENT: VENOM</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-emerald-400 transition">Tariq</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Master of the venomous curved scimitar, draining stamina with continuous fast thrusts.</p>
       </div>
 
-      <!-- BOSS 4 -->
-      <div onclick="openBossModal(4)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">04</span>
+      <!-- BOSS 4: TERESA -->
+      <div onclick="openBossModal('teresa')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/teresa_head.webp" alt="Teresa" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">04</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: WARLORD</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Iron Executioner</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Heavy armor with posture break strikes that shatter defenses.</p>
+        <span class="text-[10px] font-mono text-amber-400 tracking-widest uppercase">ELEMENT: LIGHTNING</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-amber-400 transition">Teresa</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Commands the Apex Stormlord longsword with high-voltage counter strikes.</p>
       </div>
 
-      <!-- BOSS 5 -->
-      <div onclick="openBossModal(5)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">05</span>
+      <!-- BOSS 5: UNKNOWN GUARDIAN -->
+      <div onclick="openBossModal('unknown5')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/unknown_head.webp" alt="Unknown Guardian" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-400 bg-black/60 px-2 py-0.5 rounded border border-white/10">05</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: MYTHIC</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Ghost of the Citadel</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Phantom thrusts and evasive backsteps that bypass standard blocks.</p>
+        <span class="text-[10px] font-mono text-gray-400 tracking-widest uppercase">ELEMENT: SHADOW</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-gray-300 transition">Unknown Guardian</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">A dark memory remnant whose form shifts dynamically, mirroring stance inputs.</p>
       </div>
 
-      <!-- BOSS 6 -->
-      <div onclick="openBossModal(6)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">06</span>
+      <!-- BOSS 6: MYSTERY GUARDIAN 1 -->
+      <div onclick="openBossModal('mystery6')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group opacity-85 hover:opacity-100">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/unknown_head.webp" alt="Mystery Guardian" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300 grayscale opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-500 bg-black/60 px-2 py-0.5 rounded border border-white/10">06</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: ELITE</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Crimson Monk</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">High-speed unarmed deflections paired with deadly counter-punches.</p>
+        <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase">ELEMENT: ???</span>
+        <h3 class="font-cinzel text-xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2">An unrevealed guardian trial awaiting duelists who survive the outer grounds.</p>
       </div>
 
-      <!-- BOSS 7 -->
-      <div onclick="openBossModal(7)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">07</span>
+      <!-- BOSS 7: MYSTERY GUARDIAN 2 -->
+      <div onclick="openBossModal('mystery7')" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group opacity-85 hover:opacity-100">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-white/10 mb-4 overflow-hidden relative">
+          <img src="images/unknown_head.webp" alt="Mystery Guardian" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300 grayscale opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-gray-500 bg-black/60 px-2 py-0.5 rounded border border-white/10">07</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: MASTER</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Blind Swordsman Jin</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Sound-based hearing stance with instantaneous draw attacks.</p>
+        <span class="text-[10px] font-mono text-gray-500 tracking-widest uppercase">ELEMENT: ???</span>
+        <h3 class="font-cinzel text-xl text-gray-400 font-bold mt-0.5 group-hover:text-white transition">???</h3>
+        <p class="text-xs text-gray-500 mt-1 line-clamp-2">An unrevealed guardian trial guarding the threshold to the supreme court.</p>
       </div>
 
-      <!-- BOSS 8 -->
-      <div onclick="openBossModal(8)" class="boss-card cursor-pointer p-5 rounded-xl border border-white/10 bg-gradient-to-b from-gray-900/80 to-black/90 backdrop-blur-sm group">
-        <div class="w-full h-40 bg-gray-950 rounded-lg border border-white/5 mb-4 overflow-hidden relative flex items-center justify-center">
-          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 z-10"></div>
-          <span class="text-4xl text-gray-700 font-cinzel group-hover:text-red-500 group-hover:scale-110 transition duration-300">08</span>
+      <!-- BOSS 8: JAE KA BU -->
+      <div onclick="openBossModal('jkb')" class="boss-card cursor-pointer p-5 rounded-xl border border-purple-900/40 bg-gradient-to-b from-purple-950/20 via-gray-900/90 to-black backdrop-blur-sm group">
+        <div class="w-full h-44 bg-gray-950 rounded-lg border border-purple-500/20 mb-4 overflow-hidden relative">
+          <img src="images/jkb_head.webp" alt="Jae Ka Bu" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300">
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+          <span class="absolute top-2 right-2 text-xs font-mono text-purple-400 bg-purple-950/80 px-2 py-0.5 rounded border border-purple-500/30">08</span>
         </div>
-        <span class="text-[10px] font-mono text-red-400 tracking-widest uppercase">RANK: FINAL BOSS</span>
-        <h3 class="font-cinzel text-lg text-white font-bold mt-0.5 group-hover:text-red-400 transition">Sovereign of Ash</h3>
-        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Combines all martial stances with zero recovery frames.</p>
+        <span class="text-[10px] font-mono text-purple-400 tracking-widest uppercase">ELEMENT: SPIRIT</span>
+        <h3 class="font-cinzel text-xl text-white font-bold mt-0.5 group-hover:text-purple-400 transition">Jae Ka Bu</h3>
+        <p class="text-xs text-gray-400 mt-1 line-clamp-2">Trial master commanding spiritual energy to disrupt directional stance reads.</p>
       </div>
 
     </div>
   </section>
 
-  <!-- POP-UP MODAL (CARD DETAILS & VIDEO) -->
+  <!-- POP-UP MODAL -->
   <div id="bossModalOverlay" onclick="closeBossModal(event)" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
     <div id="bossModalContainer" class="bg-gray-950 border border-white/15 rounded-2xl max-w-3xl w-full p-6 md:p-8 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
       
-      <!-- CLOSE BUTTON -->
       <button onclick="forceCloseModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl w-8 h-8 rounded-full bg-white/5 flex items-center justify-center transition">
         &times;
       </button>
 
-      <!-- MODAL CONTENT GRID -->
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mt-2">
         
-        <!-- LEFT: VIDEO PLACEHOLDER / EMBED AREA -->
-        <div class="md:col-span-7 space-y-3">
-          <div class="aspect-video w-full bg-black rounded-xl border border-white/10 flex flex-col items-center justify-center relative overflow-hidden group">
-            <!-- Red Slash Ambient Glow -->
-            <div class="absolute inset-0 bg-gradient-to-tr from-red-950/40 via-transparent to-transparent opacity-60"></div>
-            <i class="fa-solid fa-circle-play text-4xl text-red-600 mb-2 group-hover:scale-110 transition duration-300"></i>
-            <span class="text-xs font-mono text-gray-400 z-10" id="modalVideoLabel">// GAMEPLAY & FIGHT VIDEO</span>
+        <!-- LEFT: FULL BODY ART -->
+        <div class="md:col-span-5 space-y-3">
+          <div class="aspect-[3/4] w-full bg-black rounded-xl border border-white/10 relative overflow-hidden flex items-center justify-center">
+            <img id="modalBodyImage" src="" alt="Boss Art" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
           </div>
           <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 px-1">
-            <span>PARRY WINDOW: <strong text-white id="modalParry">--</strong></span>
+            <span>PARRY WINDOW: <strong class="text-white" id="modalParry">--</strong></span>
             <span>DIFFICULTY: <strong class="text-red-400" id="modalDifficulty">--</strong></span>
           </div>
         </div>
 
         <!-- RIGHT: BOSS LORE & SPECS -->
-        <div class="md:col-span-5 space-y-4">
+        <div class="md:col-span-7 space-y-4">
           <div>
-            <span class="text-[10px] font-mono text-red-500 tracking-widest uppercase" id="modalRank">RANK</span>
-            <h3 class="font-cinzel text-2xl text-white font-bold" id="modalTitle">Boss Title</h3>
+            <span class="text-[10px] font-mono tracking-widest uppercase" id="modalElement">ELEMENT</span>
+            <h3 class="font-cinzel text-3xl text-white font-bold" id="modalTitle">Boss Title</h3>
           </div>
 
           <p class="text-xs text-gray-300 leading-relaxed border-t border-b border-white/10 py-3" id="modalLore">
-            Lore details about the boss stance mechanics and combat style will appear here.
+            Lore details will appear here.
           </p>
 
           <div class="space-y-2">
-            <h4 class="text-xs font-mono text-gray-400 uppercase">// KEY COMBAT TRAITS</h4>
+            <h4 class="text-xs font-mono text-gray-400 uppercase">// COMBAT MECHANICS</h4>
             <ul class="text-xs text-gray-300 space-y-1 font-mono list-disc list-inside" id="modalTraits">
               <li>High-speed stance transitions</li>
-              <li>Directional counter windows</li>
             </ul>
           </div>
 
@@ -341,17 +344,89 @@
     </div>
   </footer>
 
-  <!-- MODAL INTERACTIVITY JAVASCRIPT -->
+  <!-- MODAL SCRIPT -->
   <script>
     const bossData = {
-      1: { title: "The Ashen Ronin", rank: "RANK: MASTER", difficulty: "9/10", parry: "120ms", lore: "A disgraced swordsman roaming the ash fields. Master of high guard stance changes with near-instantaneous slash execution.", traits: ["Lightning High Guard", "Tight Parry Window", "Aggressive Stamina Pressure"] },
-      2: { title: "Shadow Kaeda", rank: "RANK: ELITE", difficulty: "8/10", parry: "140ms", lore: "Specializes in dual short-blade techniques. Uses swift lateral steps to get behind opponents before delivering decisive strikes.", traits: ["Evasive Dash Stance", "Dual Blade Rhythm", "Directional Counter Target"] },
-      3: { title: "Grandmaster Kensei", rank: "RANK: GRANDMASTER", difficulty: "10/10", parry: "90ms", lore: "The supreme duelist of the outer citadel. Waits for opponent fatigue before delivering a single fatal counter-strike.", traits: ["Extreme Parry Precision", "Zero Recovery Frames", "Stamina Drain Master"] },
-      4: { title: "Iron Executioner", rank: "RANK: WARLORD", difficulty: "8.5/10", parry: "180ms", lore: "Wields a heavy greatsword that shatters weak posture. Though slower, his strikes break through incomplete parries.", traits: ["Unstoppable Poise", "Guard Shatter Damage", "Heavy Stamina Pool"] },
-      5: { title: "Ghost of the Citadel", rank: "RANK: MYTHIC", difficulty: "9.5/10", parry: "100ms", lore: "An enigmatic specter whose blade moves without sound. Thrusts bypass standard frontal blocks entirely.", traits: ["Phantom Thrusts", "Soundless Stances", "Unblockable Low Slashes"] },
-      6: { title: "Crimson Monk", rank: "RANK: ELITE", difficulty: "7.5/10", parry: "150ms", lore: "Combines bare-handed martial deflections with rapid draw attacks. Disarms impatient duelists effortlessly.", traits: ["Hand Deflection Parry", "Instant Counter Draw", "High Movement Speed"] },
-      7: { title: "Blind Swordsman Jin", rank: "RANK: MASTER", difficulty: "9/10", parry: "110ms", lore: "Relies on auditory cues and blade vibration. Reacts exclusively to enemy stance shifts with zero telegraphing.", traits: ["Sound-Based Counter", "No Telegraphing", "High Stance Speed"] },
-      8: { title: "Sovereign of Ash", rank: "RANK: FINAL BOSS", difficulty: "10/10", parry: "80ms", lore: "The ruler of the ruined realm. Seamlessly blends all 8 martial stances with lethal precision.", traits: ["All-Stance Mastery", "Dynamic Parry Adaptation", "Insta-Kill Counter Strike"] }
+      astrid: {
+        title: "Astrid",
+        element: "ELEMENT: ICE",
+        elementClass: "text-cyan-400",
+        difficulty: "9/10",
+        parry: "110ms",
+        bodyImg: "images/astrid_body.webp",
+        lore: "A composed First Breaker who commands the Celestial Borealis. Her icy blade slows opponent reaction speeds and punishes rushed thrusts with razor-thin parry windows.",
+        traits: ["Frost Stance Slow", "Tight Parry Window", "Celestial Borealis Counter"]
+      },
+      ignis: {
+        title: "Ignis",
+        element: "ELEMENT: FIRE",
+        elementClass: "text-red-500",
+        difficulty: "9.5/10",
+        parry: "120ms",
+        bodyImg: "images/ignis_body.webp",
+        lore: "Wielder of the flame-infused Claymore of Phoenix Ascension. Ignis strikes with explosive force, shattering guard stamina and leaving ash in his wake.",
+        traits: ["Phoenix Heavy Slash", "Guard Shatter Stance", "High Burn Damage"]
+      },
+      tariq: {
+        title: "Tariq",
+        element: "ELEMENT: VENOM",
+        elementClass: "text-emerald-400",
+        difficulty: "8.5/10",
+        parry: "130ms",
+        bodyImg: "images/tariq_body.webp",
+        lore: "A deadly combatant armed with a venomous curved scimitar. Tariq uses fluid lateral dashes and poisoning strikes to wear down his opponent's stamina pool.",
+        traits: ["Venom Drain Thrusts", "Evasive Scimitar Flow", "High Mobility Dash"]
+      },
+      teresa: {
+        title: "Teresa",
+        element: "ELEMENT: LIGHTNING",
+        elementClass: "text-amber-400",
+        difficulty: "9/10",
+        parry: "100ms",
+        bodyImg: "images/teresa_body.webp",
+        lore: "Master of the Apex Stormlord longsword. Teresa strikes with electrifying speed, punishing minor stance mistakes with near-instantaneous lightning counters.",
+        traits: ["Apex Storm Thrust", "Instant Lightning Counter", "Low Recovery Delay"]
+      },
+      unknown5: {
+        title: "Unknown Guardian",
+        element: "ELEMENT: SHADOW",
+        elementClass: "text-gray-400",
+        difficulty: "9.5/10",
+        parry: "90ms",
+        bodyImg: "images/unknown_body.webp",
+        lore: "A dark memory remnant whose form shifts dynamically, mirroring your chosen weapon stance before delivering a fatal shadow counter-strike.",
+        traits: ["Dynamic Stance Mirroring", "Shadow Counter Strike", "Unpredictable Rhythm"]
+      },
+      mystery6: {
+        title: "???",
+        element: "ELEMENT: UNREVEALED",
+        elementClass: "text-gray-500",
+        difficulty: "???",
+        parry: "???",
+        bodyImg: "images/unknown_body.webp",
+        lore: "Information regarding this guardian remains sealed until duelists unlock further trial progression.",
+        traits: ["Sealed Combat Data", "Unrevealed Stance"]
+      },
+      mystery7: {
+        title: "???",
+        element: "ELEMENT: UNREVEALED",
+        elementClass: "text-gray-500",
+        difficulty: "???",
+        parry: "???",
+        bodyImg: "images/unknown_body.webp",
+        lore: "Information regarding this guardian remains sealed until duelists unlock further trial progression.",
+        traits: ["Sealed Combat Data", "Unrevealed Stance"]
+      },
+      jkb: {
+        title: "Jae Ka Bu",
+        element: "ELEMENT: SPIRIT",
+        elementClass: "text-purple-400",
+        difficulty: "10/10",
+        parry: "80ms",
+        bodyImg: "images/jkb_body.webp",
+        lore: "The supreme trial master commanding spiritual energy. Jae Ka Bu manipulates spirit echoes to distort directional stance inputs and unleash instantaneous counter-strikes.",
+        traits: ["Spirit Stance Distortion", "Instantaneous Counter Strike", "Supreme Trial Mastery"]
+      }
     };
 
     function openBossModal(id) {
@@ -359,11 +434,15 @@
       if (!data) return;
 
       document.getElementById('modalTitle').innerText = data.title;
-      document.getElementById('modalRank').innerText = data.rank;
+      
+      const elBadge = document.getElementById('modalElement');
+      elBadge.innerText = data.element;
+      elBadge.className = `text-[10px] font-mono tracking-widest uppercase ${data.elementClass}`;
+
       document.getElementById('modalDifficulty').innerText = data.difficulty;
       document.getElementById('modalParry').innerText = data.parry;
       document.getElementById('modalLore').innerText = data.lore;
-      document.getElementById('modalVideoLabel').innerText = `// ${data.title.toUpperCase()} FIGHT VIDEO`;
+      document.getElementById('modalBodyImage').src = data.bodyImg;
 
       const traitsList = document.getElementById('modalTraits');
       traitsList.innerHTML = '';
