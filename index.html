@@ -7,7 +7,7 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <!-- Google Fonts: Noto Serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,28 @@
     }
     .btn-glow-teal:hover {
       box-shadow: 0 0 32px rgba(63, 245, 216, 0.85);
-      transform: translateY(-2px);
+    }
+
+    /* Parallelogram / Angular Button Styling */
+    .btn-parallelogram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transform: skewX(-14deg);
+      border-radius: 2px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-parallelogram:hover {
+      transform: translateY(-2px) skewX(-14deg);
+    }
+    .btn-parallelogram:active {
+      transform: translateY(1px) skewX(-14deg);
+    }
+    .btn-parallelogram > * {
+      transform: skewX(14deg);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     
     /* Teal #3ff5d8 & Red Ember Background Gradient */
@@ -99,10 +120,20 @@
         <a href="#media" class="hover:text-teal-accent transition">MEDIA</a>
       </nav>
 
-      <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-         class="btn-glow-teal text-black font-extrabold text-xs md:text-sm px-6 py-2.5 rounded-full tracking-wider uppercase font-sans">
-        PLAY NOW
-      </a>
+      <div class="flex items-center gap-4 sm:gap-6">
+        <div class="flex items-center space-x-3.5 text-base text-gray-400">
+          <a href="https://www.youtube.com/@OneHitKillGame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@onehitkillgame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://x.com/OneHitKillDev" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="X">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+
+        <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
+           class="btn-glow-teal btn-parallelogram text-black font-extrabold text-xs md:text-sm px-5 sm:px-6 py-2.5 tracking-wider uppercase font-sans">
+          <span>PLAY NOW</span>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -128,12 +159,12 @@
 
       <div class="flex flex-wrap items-center gap-4 pt-2 font-sans">
         <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-           class="btn-glow-teal text-black font-extrabold text-sm px-8 py-4 rounded-full tracking-wider uppercase flex items-center gap-3">
-          PLAY NOW <i class="fa-solid fa-play text-xs"></i>
+           class="btn-glow-teal btn-parallelogram text-black font-extrabold text-sm px-8 py-4 tracking-wider uppercase flex items-center gap-3">
+          <span>PLAY NOW <i class="fa-solid fa-play text-xs"></i></span>
         </a>
         
-        <a href="#media" class="border border-red-900/40 hover:border-red-500 bg-gray-900/80 hover:bg-gray-800 text-gray-200 font-bold text-sm px-8 py-4 rounded-full tracking-wider uppercase transition">
-          WATCH TRAILER
+        <a href="#media" class="btn-parallelogram border border-red-900/40 hover:border-red-500 bg-gray-900/80 hover:bg-gray-800 text-gray-200 font-bold text-sm px-8 py-4 tracking-wider uppercase">
+          <span>WATCH TRAILER</span>
         </a>
       </div>
     </div>
@@ -316,8 +347,8 @@
           </div>
 
           <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-             class="btn-glow-teal w-full text-black font-bold text-xs py-3 rounded-xl tracking-wider uppercase text-center block mt-4 font-sans">
-            CHALLENGE IN GAME
+             class="btn-glow-teal btn-parallelogram w-full text-black font-bold text-xs py-3 tracking-wider uppercase text-center block mt-4 font-sans">
+            <span>CHALLENGE IN GAME</span>
           </a>
         </div>
 
@@ -340,13 +371,13 @@
       
       <!-- TOP NAVIGATION BAR: ELEMENT SELECTOR BUTTONS -->
       <div class="flex items-center gap-2 md:gap-4 overflow-x-auto max-w-full pb-2 mb-6 scrollbar-none">
-        <button onclick="selectElement(0)" id="btnElem0" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-teal-accent bg-teal-accent text-black font-bold">FIRE</button>
-        <button onclick="selectElement(1)" id="btnElem1" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">ICE</button>
-        <button onclick="selectElement(2)" id="btnElem2" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">VENOM</button>
-        <button onclick="selectElement(3)" id="btnElem3" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">LIGHT</button>
-        <button onclick="selectElement(4)" id="btnElem4" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">VOID</button>
-        <button onclick="selectElement(5)" id="btnElem5" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">DEATH</button>
-        <button onclick="selectElement(6)" id="btnElem6" class="px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white">LIGHTNING</button>
+        <button onclick="selectElement(0)" id="btnElem0" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-teal-accent bg-teal-accent text-black font-bold"><span>FIRE</span></button>
+        <button onclick="selectElement(1)" id="btnElem1" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>ICE</span></button>
+        <button onclick="selectElement(2)" id="btnElem2" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>VENOM</span></button>
+        <button onclick="selectElement(3)" id="btnElem3" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>LIGHT</span></button>
+        <button onclick="selectElement(4)" id="btnElem4" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>VOID</span></button>
+        <button onclick="selectElement(5)" id="btnElem5" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>DEATH</span></button>
+        <button onclick="selectElement(6)" id="btnElem6" class="btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white"><span>LIGHTNING</span></button>
       </div>
 
       <!-- MAIN CAROUSEL VIEWPORT WITH DUAL DIRECTION CONTROL BUTTONS -->
@@ -532,10 +563,11 @@
   <footer class="w-full border-t border-white/10 bg-black py-8 mt-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center space-x-6 text-xl text-gray-400">
-        <a href="#" class="hover:text-teal-accent transition" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" class="hover:text-teal-accent transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="hover:text-teal-accent transition" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="#" class="hover:text-teal-accent transition" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@OneHitKillGame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@onehitkillgame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://x.com/OneHitKillDev" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="X">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
       </div>
       <div class="text-xs text-gray-400 text-center md:text-right font-sans">
         Available now on <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-teal-accent">Spawn.co</a>
@@ -712,9 +744,9 @@
       for (let i = 0; i < elementalBlades.length; i++) {
         const btn = document.getElementById(`btnElem${i}`);
         if (i === currentElemIndex) {
-          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition bg-teal-accent text-black font-bold border-teal-accent";
+          btn.className = "btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition bg-teal-accent text-black font-bold border-teal-accent";
         } else {
-          btn.className = "px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white";
+          btn.className = "btn-parallelogram px-4 py-1.5 text-xs font-mono uppercase tracking-wider border transition border-white/10 text-gray-400 hover:text-white";
         }
       }
     }
