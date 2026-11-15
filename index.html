@@ -93,6 +93,12 @@
       border-color: rgba(63, 245, 216, 0.6);
       box-shadow: 0 10px 25px -10px rgba(63, 245, 216, 0.3);
     }
+
+    /* Hero Background Feather Mask */
+    .hero-bg-feather {
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between bg-ash-glow relative overflow-x-hidden bg-[#080809] text-gray-100">
@@ -113,15 +119,17 @@
         </span>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-widest text-gray-300 font-sans">
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold tracking-widest text-gray-300 font-sans">
         <a href="#bosses" class="hover:text-teal-accent transition">BOSSES</a>
         <a href="#weapons" class="hover:text-teal-accent transition">WEAPONS</a>
         <a href="#lore" class="hover:text-teal-accent transition">WORLD (LORE)</a>
         <a href="#media" class="hover:text-teal-accent transition">MEDIA</a>
+        <a href="#patchnotes" class="hover:text-teal-accent transition">PATCH NOTES</a>
       </nav>
 
       <div class="flex items-center gap-4 sm:gap-6">
         <div class="flex items-center space-x-3.5 text-base text-gray-400">
+          <a href="https://discord.gg/HNsJXBM5sP" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
           <a href="https://www.youtube.com/@OneHitKillGame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           <a href="https://www.tiktok.com/@onehitkillgame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
           <a href="https://x.com/OneHitKillDev" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="X">
@@ -137,9 +145,17 @@
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <main class="max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-44 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
-    <div class="lg:col-span-6 space-y-8 z-10">
+  <!-- HERO SECTION WITH FEATHERED BACKGROUND -->
+  <div class="relative w-full overflow-hidden">
+    <!-- Darkened, Vignetted & Feathered Banner Image -->
+    <div class="absolute inset-x-0 bottom-0 top-20 pointer-events-none z-0 hero-bg-feather overflow-hidden flex items-center justify-center">
+      <img src="images/hero_bg.webp" alt="One Hit Kill Arena" class="w-full h-full object-cover object-top opacity-50 filter brightness-[0.7] contrast-[1.1]">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#080809] via-transparent to-[#080809]/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#080809]/75 via-transparent to-[#080809]/75"></div>
+    </div>
+
+    <main class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-16 lg:pt-44 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-grow">
+      <div class="lg:col-span-6 space-y-8 z-10">
       
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#082220] border border-teal-accent text-teal-accent text-xs font-semibold tracking-widest font-sans">
         <span class="w-2 h-2 rounded-full bg-teal-accent animate-pulse"></span> SPAWN.CO ORIGINAL
@@ -169,30 +185,92 @@
       </div>
     </div>
 
-    <!-- RIGHT HERO DISPLAY -->
-    <div class="lg:col-span-6 relative flex justify-center items-center">
-      <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl" style="background-color: rgba(63, 245, 216, 0.15);"></div>
+    <!-- RIGHT HERO DISPLAY: COMBAT MECHANICS INTERACTIVE WINDOW -->
+    <div class="lg:col-span-6 relative flex justify-center items-center w-full">
+      <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl pointer-events-none" style="background-color: rgba(63, 245, 216, 0.12);"></div>
       
-      <div class="relative w-full max-w-lg aspect-[4/3] rounded-2xl border border-teal-accent bg-gradient-to-b from-gray-900/90 to-black/95 backdrop-blur-md p-6 overflow-hidden shadow-2xl flex flex-col justify-between">
-        <div class="absolute -top-10 -right-10 w-96 h-1 bg-gradient-to-r from-transparent via-[#3ff5d8] to-transparent rotate-45 blur-[1px]"></div>
-        <div class="absolute top-1/2 -left-20 w-[500px] h-0.5 bg-gradient-to-r from-transparent via-red-600/40 to-transparent -rotate-12"></div>
+      <div class="relative w-full max-w-xl rounded-2xl border border-teal-accent/50 bg-gradient-to-b from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-md p-5 sm:p-6 overflow-hidden shadow-2xl flex flex-col gap-4">
+        
+        <!-- TOP WINDOW BAR: HEADER & TABS -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-teal-accent animate-ping"></span>
+              <span class="font-mono text-xs uppercase tracking-widest text-teal-accent">// COMBAT MECHANICS</span>
+            </div>
+            <span class="text-[11px] font-mono text-gray-500 uppercase tracking-wider">PREVIEW FEED</span>
+          </div>
 
-        <div class="z-10 flex flex-col items-center justify-center my-auto py-2">
-          <img src="images/logo.png" alt="死: One Hit Kill" class="max-h-48 md:max-h-56 w-auto object-contain drop-shadow-[0_0_25px_rgba(63,245,216,0.4)]">
+          <!-- 5 NAVIGATION TABS -->
+          <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none" id="combatTabs">
+            <button onclick="switchCombatTab('attack')" id="tab-attack" class="combat-tab active btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition bg-teal-accent text-black font-bold border border-teal-accent">
+              <span>ATTACK</span>
+            </button>
+            <button onclick="switchCombatTab('defend')" id="tab-defend" class="combat-tab btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30">
+              <span>DEFEND</span>
+            </button>
+            <button onclick="switchCombatTab('kick')" id="tab-kick" class="combat-tab btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30">
+              <span>KICK</span>
+            </button>
+            <button onclick="switchCombatTab('dodge')" id="tab-dodge" class="combat-tab btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30">
+              <span>DODGE</span>
+            </button>
+            <button onclick="switchCombatTab('stamina')" id="tab-stamina" class="combat-tab btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30">
+              <span>STAMINA</span>
+            </button>
+          </div>
         </div>
 
-        <div class="z-10 self-end flex items-center gap-3 bg-black/80 border border-white/10 px-4 py-2 rounded-xl backdrop-blur-md">
-          <div class="w-8 h-8 rounded-full bg-[#082220] border border-teal-accent flex items-center justify-center text-teal-accent text-xs font-bold font-custom">
-            死
+        <!-- VIDEO VIEWPORT CONTAINER -->
+        <div class="relative w-full aspect-video rounded-xl border border-white/15 bg-black overflow-hidden flex items-center justify-center group shadow-inner">
+          <!-- Active Loop Video -->
+          <video id="combatVideo" class="w-full h-full object-cover hidden" autoplay loop muted playsinline src="videos/attack.mp4">
+          </video>
+          
+          <!-- Fallback placeholder when video file is not yet dropped into videos/ -->
+          <div id="videoFallback" class="absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-[#081816] flex flex-col items-center justify-center p-6 text-center transition duration-300">
+            <div class="w-12 h-12 rounded-full border border-teal-accent/40 bg-teal-accent/10 flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(63,245,216,0.2)]">
+              <i class="fa-solid fa-film text-teal-accent text-base"></i>
+            </div>
+            <p id="fallbackTitle" class="text-sm font-custom text-white tracking-wider uppercase font-bold">ATTACK MOVE PREVIEW</p>
+            <p class="text-[11px] font-mono text-gray-400 mt-1">Place <span id="fallbackFilename" class="text-teal-accent font-semibold">attack.mp4</span> in <code class="text-gray-300">videos/</code> to play clip</p>
           </div>
-          <div class="text-xs font-sans">
-            <p class="text-gray-400 leading-none">A Game by</p>
-            <p class="text-white font-bold leading-tight">@chocopuff</p>
+
+          <!-- Video corner scanline aesthetic accents -->
+          <div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/75 border border-white/10 text-[10px] font-mono text-teal-accent flex items-center gap-1.5 backdrop-blur-sm pointer-events-none">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> LOOP // DEMO
+          </div>
+          <div id="combatTag" class="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 bg-red-950/70 border border-red-500/30 backdrop-blur-sm pointer-events-none">
+            OFFENSE
           </div>
         </div>
+
+        <!-- MOVE EXPLANATION & DETAIL -->
+        <div class="bg-black/60 border border-white/10 rounded-xl p-4 flex flex-col gap-1.5">
+          <div class="flex flex-wrap items-baseline gap-2">
+            <h3 id="combatMoveTitle" class="text-lg sm:text-xl font-custom text-white font-bold tracking-wide">Attacks</h3>
+            <span id="combatMoveSubtitle" class="text-xs font-mono text-teal-accent tracking-wide">(4-Way Directional & Feints)</span>
+          </div>
+          <p id="combatMoveDesc" class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
+            Strike from four distinct angles with charged attacks. Release your strike early to feint, baiting reactions and forcing early defensive reads from your opponent.
+          </p>
+        </div>
+
+        <!-- BOTTOM STATUS BAR / CREATOR BADGE -->
+        <div class="flex items-center justify-between text-xs font-sans text-gray-400 pt-1 border-t border-white/5">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-[#082220] border border-teal-accent flex items-center justify-center text-teal-accent text-[10px] font-bold font-custom">
+              死
+            </div>
+            <span class="text-[11px] font-mono text-gray-400">ONE HIT KILL Mechanics</span>
+          </div>
+          <span class="text-[11px] font-mono text-gray-400">By <strong class="text-white">@chocopuff</strong></span>
+        </div>
+
       </div>
     </div>
   </main>
+  </div>
 
   <!-- SECTION 1: BOSSES GRID -->
   <section id="bosses" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
@@ -540,6 +618,142 @@
     </div>
   </section>
 
+  <!-- SECTION 5: PATCH NOTES -->
+  <section id="patchnotes" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+      <div>
+        <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// PATCH NOTES</span>
+        <h2 class="text-3xl font-bold text-white font-custom mt-1">CHANGELOG & BALANCE LOG</h2>
+      </div>
+      <p class="text-xs text-gray-400 mt-2 md:mt-0 font-mono">Live balance adjustments, engine tweaks, and combat tuning</p>
+    </div>
+
+    <!-- ACCORDION LOG DRAWER CONTAINER -->
+    <div class="w-full bg-gradient-to-b from-gray-950 via-black to-gray-950 border border-teal-accent/30 rounded-2xl p-4 sm:p-6 shadow-2xl space-y-3">
+      
+      <!-- PATCH 1: LATEST -->
+      <details class="group bg-black/60 border border-teal-accent/50 rounded-xl overflow-hidden transition-all duration-300" open>
+        <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-white/[0.02] transition">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-[#082220] border border-teal-accent text-teal-accent font-mono text-xs font-bold tracking-wider">v1.2.0</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-teal-accent text-black font-extrabold uppercase tracking-widest">LATEST</span>
+            <h3 class="font-custom text-base sm:text-lg text-white font-semibold tracking-wide">Shadow & Ash Combat Rebalance</h3>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-gray-400 hidden sm:inline-block">NOVEMBER 2026</span>
+            <i class="fa-solid fa-chevron-down text-teal-accent text-xs transform group-open:rotate-180 transition-transform duration-300"></i>
+          </div>
+        </summary>
+        <div class="px-5 pb-5 pt-2 border-t border-white/10 text-xs sm:text-sm text-gray-300 space-y-3 font-light">
+          <div>
+            <span class="text-[11px] font-mono font-bold text-red-400 uppercase tracking-wider">// COMBAT TUNING</span>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-gray-300">
+              <li><strong>4-Way Directional Strikes:</strong> Tuned startup and release windows by 30ms for tighter reaction times.</li>
+              <li><strong>Feint Buff:</strong> Early attack release feints now recover 15% faster to encourage mind games.</li>
+              <li><strong>Perfect Dodge:</strong> Stamina refund increased to 100% on successful afterimage trigger.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-[11px] font-mono font-bold text-teal-accent uppercase tracking-wider">// GUARDIANS & WEAPONS</span>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-gray-300">
+              <li><strong>Ignis:</strong> Claymore posture damage reduced by 5% on blocked strikes.</li>
+              <li><strong>Astrid:</strong> Celestial Borealis frost slow effect duration normalized across all dueling arenas.</li>
+              <li><strong>Elemental Blades:</strong> Enhanced Tier 8 visual effects and projectile collision accuracy.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- PATCH 2 -->
+      <details class="group bg-black/60 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20">
+        <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-white/[0.02] transition">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-gray-900 border border-white/15 text-gray-300 font-mono text-xs font-bold tracking-wider">v1.1.5</span>
+            <h3 class="font-custom text-base sm:text-lg text-white font-semibold tracking-wide">Guard Break & Evolution Tiers</h3>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-gray-400 hidden sm:inline-block">OCTOBER 2026</span>
+            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transform group-open:rotate-180 transition-transform duration-300"></i>
+          </div>
+        </summary>
+        <div class="px-5 pb-5 pt-2 border-t border-white/10 text-xs sm:text-sm text-gray-300 space-y-3 font-light">
+          <div>
+            <span class="text-[11px] font-mono font-bold text-amber-400 uppercase tracking-wider">// GUARD BREAK</span>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-gray-300">
+              <li>Heavy Kick startup shortened by 4 frames to punish passive blocking stances.</li>
+              <li>Added instant knockdown when interrupting opponents mid-charge.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="text-[11px] font-mono font-bold text-teal-accent uppercase tracking-wider">// ARSENAL</span>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-gray-300">
+              <li>Added full 8-tier progression inspection for all elemental swords in the weapon forge.</li>
+              <li>Fixed sound latency on successful blade parries during high network ping spikes.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- PATCH 3 -->
+      <details class="group bg-black/60 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20">
+        <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-white/[0.02] transition">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-gray-900 border border-white/15 text-gray-300 font-mono text-xs font-bold tracking-wider">v1.1.0</span>
+            <h3 class="font-custom text-base sm:text-lg text-white font-semibold tracking-wide">The Spirit Echo & Arena Overhaul</h3>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-gray-400 hidden sm:inline-block">SEPTEMBER 2026</span>
+            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transform group-open:rotate-180 transition-transform duration-300"></i>
+          </div>
+        </summary>
+        <div class="px-5 pb-5 pt-2 border-t border-white/10 text-xs sm:text-sm text-gray-300 space-y-3 font-light">
+          <div>
+            <span class="text-[11px] font-mono font-bold text-purple-400 uppercase tracking-wider">// BOSS ARRIVAL</span>
+            <ul class="list-disc list-inside mt-1 space-y-1 text-gray-300">
+              <li>Jae Ka Bu (Spirit Echo) added to the trial roster with phantom strike clones.</li>
+              <li>Ruined Duel Grounds arena overhaul with dynamic embers and reactive lighting.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
+
+      <!-- PATCH 4 -->
+      <details class="group bg-black/60 border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20">
+        <summary class="flex items-center justify-between p-4 sm:p-5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden hover:bg-white/[0.02] transition">
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="px-2.5 py-1 rounded bg-gray-900 border border-white/15 text-gray-300 font-mono text-xs font-bold tracking-wider">v1.0.0</span>
+            <h3 class="font-custom text-base sm:text-lg text-white font-semibold tracking-wide">Spawn.co Official Launch</h3>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-gray-400 hidden sm:inline-block">AUGUST 2026</span>
+            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transform group-open:rotate-180 transition-transform duration-300"></i>
+          </div>
+        </summary>
+        <div class="px-5 pb-5 pt-2 border-t border-white/10 text-xs sm:text-sm text-gray-300 space-y-2 font-light">
+          <p>Initial release of 死: ONE HIT KILL on Spawn.co. Core lethal 1v1 duel system, posture meter, elemental blades, and boss challenge trials deployed worldwide.</p>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION BANNER -->
+  <section class="max-w-7xl mx-auto px-6 py-12 w-full">
+    <div class="relative w-full rounded-2xl border border-teal-accent bg-gradient-to-r from-gray-950 via-black to-gray-950 p-8 sm:p-12 overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 text-center md:text-left z-10">
+        <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// ENTER THE ARENA</span>
+        <h2 class="text-3xl sm:text-4xl font-custom text-white font-bold">ONE STRIKE DECIDES ALL</h2>
+        <p class="text-sm text-gray-400 font-light max-w-lg">Master parry precision and claim victory against guardians and players worldwide.</p>
+      </div>
+      <div class="z-10 flex flex-wrap items-center gap-4">
+        <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
+           class="btn-glow-teal btn-parallelogram text-black font-extrabold text-sm px-8 py-4 tracking-wider uppercase">
+          <span>PLAY ON SPAWN.CO <i class="fa-solid fa-play text-xs"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- LIGHTBOX / FULLSCREEN GALLERY PREVIEW MODAL -->
   <div id="galleryModalOverlay" onclick="closeGalleryModal(event)" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
     <div id="galleryModalContainer" class="bg-gray-950 border border-teal-accent rounded-2xl max-w-4xl w-full p-4 relative shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300">
@@ -563,6 +777,7 @@
   <footer class="w-full border-t border-white/10 bg-black py-8 mt-12">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center space-x-6 text-xl text-gray-400">
+        <a href="https://discord.gg/HNsJXBM5sP" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
         <a href="https://www.youtube.com/@OneHitKillGame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         <a href="https://www.tiktok.com/@onehitkillgame" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
         <a href="https://x.com/OneHitKillDev" target="_blank" rel="noopener noreferrer" class="hover:text-teal-accent transition flex items-center" aria-label="X">
@@ -818,6 +1033,117 @@
         nextTier();
       }
     });
+
+    /* COMBAT MECHANICS INTERACTIVE TABS & VIDEO */
+    const combatData = {
+      attack: {
+        title: "Attacks",
+        subtitle: "(4-Way Directional & Feints)",
+        desc: "Strike from four distinct angles with charged attacks. Release your strike early to feint, baiting reactions and forcing early defensive reads from your opponent.",
+        video: "videos/attack.mp4",
+        tag: "OFFENSE",
+        tagClass: "text-red-400 bg-red-950/70 border-red-500/30",
+        fallbackTitle: "ATTACK MOVE PREVIEW",
+        fallbackFile: "attack.mp4"
+      },
+      defend: {
+        title: "Defense",
+        subtitle: "(Block & Parry)",
+        desc: "Hold to block incoming strikes at the cost of stamina. Timed parries neutralize attacks completely, punishing aggressive play and exposing the opponent for a fatal counter.",
+        video: "videos/defend.mp4",
+        tag: "DEFENSE",
+        tagClass: "text-teal-accent bg-teal-950/70 border-teal-accent/30",
+        fallbackTitle: "DEFENSE MOVE PREVIEW",
+        fallbackFile: "defend.mp4"
+      },
+      kick: {
+        title: "Kick",
+        subtitle: "(Guard Break)",
+        desc: "Drive a heavy kick into blocking opponents to shatter their guard, or interrupt foes mid-charge to knock them to the ground.",
+        video: "videos/kick.mp4",
+        tag: "UTILITY",
+        tagClass: "text-amber-400 bg-amber-950/70 border-amber-500/30",
+        fallbackTitle: "KICK MOVE PREVIEW",
+        fallbackFile: "kick.mp4"
+      },
+      dodge: {
+        title: "Dodge",
+        subtitle: "(Phantom Evasion)",
+        desc: "Precision footwork avoids incoming strikes. Execute a Perfect Dodge to leave behind an afterimage while instantly refunding stamina.",
+        video: "videos/dodge.mp4",
+        tag: "EVASION",
+        tagClass: "text-cyan-400 bg-cyan-950/70 border-cyan-500/30",
+        fallbackTitle: "DODGE MOVE PREVIEW",
+        fallbackFile: "dodge.mp4"
+      },
+      stamina: {
+        title: "Stamina",
+        subtitle: "(Survival Pool)",
+        desc: "Managing your stamina is life or death. Depleting your pool completely leaves you stunned and vulnerable to an instant execution.",
+        video: "videos/stamina.mp4",
+        tag: "SURVIVAL",
+        tagClass: "text-purple-400 bg-purple-950/70 border-purple-500/30",
+        fallbackTitle: "STAMINA POOL PREVIEW",
+        fallbackFile: "stamina.mp4"
+      }
+    };
+
+    function switchCombatTab(key) {
+      const data = combatData[key];
+      if (!data) return;
+
+      const tabs = ['attack', 'defend', 'kick', 'dodge', 'stamina'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tab-${t}`);
+        if (!btn) return;
+        if (t === key) {
+          btn.className = "combat-tab active btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition bg-teal-accent text-black font-bold border border-teal-accent";
+        } else {
+          btn.className = "combat-tab btn-parallelogram px-3 sm:px-4 py-1.5 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30";
+        }
+      });
+
+      document.getElementById('combatMoveTitle').textContent = data.title;
+      document.getElementById('combatMoveSubtitle').textContent = data.subtitle;
+      document.getElementById('combatMoveDesc').textContent = data.desc;
+
+      const tagElem = document.getElementById('combatTag');
+      tagElem.textContent = data.tag;
+      tagElem.className = `absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider border backdrop-blur-sm pointer-events-none ${data.tagClass}`;
+
+      document.getElementById('fallbackTitle').textContent = data.fallbackTitle;
+      document.getElementById('fallbackFilename').textContent = data.fallbackFile;
+
+      const video = document.getElementById('combatVideo');
+      const fallback = document.getElementById('videoFallback');
+      
+      video.src = data.video;
+      video.load();
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          video.classList.remove('hidden');
+          fallback.style.display = 'none';
+        }).catch(() => {
+          video.classList.add('hidden');
+          fallback.style.display = 'flex';
+        });
+      }
+    }
+
+    const combatVideoElem = document.getElementById('combatVideo');
+    if (combatVideoElem) {
+      combatVideoElem.addEventListener('loadeddata', () => {
+        combatVideoElem.classList.remove('hidden');
+        const fallback = document.getElementById('videoFallback');
+        if (fallback) fallback.style.display = 'none';
+      });
+      combatVideoElem.addEventListener('error', () => {
+        combatVideoElem.classList.add('hidden');
+        const fallback = document.getElementById('videoFallback');
+        if (fallback) fallback.style.display = 'flex';
+      });
+    }
 
     // Initialize display on load
     updateCarouselDisplay();
