@@ -508,11 +508,140 @@
 
   <!-- SECTION 3: WORLD (LORE) -->
   <section id="lore" class="max-w-7xl mx-auto px-6 py-16 border-t border-white/10 w-full">
-    <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// THE REALM</span>
-    <h2 class="text-3xl font-bold text-white font-custom mb-4 mt-1">WORLD OF SHADOW & ASH</h2>
-    <p class="text-gray-300 text-sm max-w-3xl leading-relaxed font-light">
-      Set in ruined duel arenas across ancient mythic grounds, warriors gather to test their precision where armor offers no protection and victory is determined in a fraction of a second.
-    </p>
+    <div class="mb-8">
+      <span class="text-xs font-mono text-teal-accent tracking-widest uppercase">// WORLD &amp; MYTHOLOGY</span>
+      <h2 class="text-3xl font-bold text-white font-custom mb-3 mt-1">THE WORLD OF ONE HIT KILL</h2>
+      <p class="text-base sm:text-lg text-gray-300 italic tracking-wide">"Steel has no value. Memory holds all power."</p>
+    </div>
+
+    <div class="w-full bg-gradient-to-b from-gray-950 via-black to-gray-950 border border-teal-accent/30 rounded-2xl p-5 sm:p-8 shadow-2xl">
+
+      <!-- LORE TABS -->
+      <div class="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 mb-6 scrollbar-none">
+        <button onclick="switchLoreTab('diyu')" id="loreTab-diyu" class="btn-parallelogram px-4 py-2 text-xs font-mono uppercase tracking-wider transition bg-teal-accent text-black font-bold border border-teal-accent whitespace-nowrap">
+          <span>1 // The Fall of Diyu</span>
+        </button>
+        <button onclick="switchLoreTab('breakers')" id="loreTab-breakers" class="btn-parallelogram px-4 py-2 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30 whitespace-nowrap">
+          <span>2 // The First Breakers</span>
+        </button>
+        <button onclick="switchLoreTab('rebellion')" id="loreTab-rebellion" class="btn-parallelogram px-4 py-2 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30 whitespace-nowrap">
+          <span>3 // Death's Rebellion</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: THE FALL OF DIYU -->
+      <div id="lorePanel-diyu" class="lore-panel max-w-3xl space-y-10">
+        <div>
+          <span class="text-[11px] font-mono font-bold text-teal-accent uppercase tracking-widest">// THE PURGATORY CAGE &amp; CELESTIAL DECREE</span>
+          <h3 class="text-3xl text-white font-bold mt-1">The Grey Expanse of Diyu</h3>
+        </div>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter I</span>
+          <h4 class="text-xl text-white font-bold">The Cage of Ash</h4>
+          <p class="text-gray-300 font-light leading-loose">Before the first blade was drawn, there was Diyu: a prison built to hold the dead. When mortals died, their souls were carried here and unmade. Names were torn away, then faces, then every memory of love and war and breath. What remained drifted without purpose over endless dunes of grey ash, growing quieter with each passing age, until nothing was left of them but silence.</p>
+          <p class="text-gray-300 font-light leading-loose">There was no gate to batter down and no warden to bribe. The cage had been made to be perfect.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-amber-400 uppercase tracking-widest">Chapter II</span>
+          <h4 class="text-xl text-white font-bold">The Court Above</h4>
+          <p class="text-gray-300 font-light leading-loose">Far above the ash, in heavens drenched in golden light, sat the Celestial Court. They did not hate the damned. Hatred would have required them to look down. They ruled by rigid law and unbroken decree, and to them the underworld was a ledger kept in a forgotten room, its ten thousand lost souls a matter of cold arithmetic.</p>
+          <p class="text-gray-300 font-light leading-loose">Their arrogance was simple. They believed that what they had built could not fail.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-red-400 uppercase tracking-widest">Chapter III</span>
+          <h4 class="text-xl text-white font-bold">The Scar</h4>
+          <p class="text-gray-300 font-light leading-loose">The cage did fail. Somewhere in the grey, the bedrock of reality itself was shattered, and the wound has never closed. A jagged scar now cuts through the seamless prison, a place where the world remembers it was once broken. The Court calls it a flaw in the record. The dead call it the only proof that Diyu can be defeated.</p>
+        </article>
+      </div>
+
+      <!-- TAB 2: THE FIRST BREAKERS -->
+      <div id="lorePanel-breakers" class="lore-panel hidden max-w-3xl space-y-10">
+        <div>
+          <span class="text-[11px] font-mono font-bold text-teal-accent uppercase tracking-widest">// THE 7 MORTAL HERETICS &amp; THE REALITY TEAR</span>
+          <h3 class="text-3xl text-white font-bold mt-1">The Myth of the Seven First Breakers</h3>
+        </div>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter I</span>
+          <h4 class="text-xl text-white font-bold">Seven Who Would Not Fade</h4>
+          <p class="text-gray-300 font-light leading-loose">The old tale tells of seven souls who refused to dissolve. Seven human beings stood in the ash while everything around them forgot itself, and each clung to the last ember of who they had been. They would not accept an eternity of silent decay. Their rebellion was the oldest and most dangerous a mortal can commit. They would not be forgotten.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter II</span>
+          <h4 class="text-xl text-white font-bold">The Pact of Wild Powers</h4>
+          <p class="text-gray-300 font-light leading-loose">Their cries reached past the boundaries of Purgatory, past the reach of the Court, into the places law had never governed. Something answered. The primordial forces of the world, wild and unclaimed, came to the Seven: <span class="text-red-400 font-semibold">Fire</span>, <span class="text-cyan-300 font-semibold">Ice</span>, <span class="text-emerald-400 font-semibold">Venom</span>, <span class="text-amber-300 font-semibold">Light</span>, <span class="text-purple-400 font-semibold">Void</span>, <span class="text-yellow-300 font-semibold">Lightning</span>, and <span class="text-gray-100 font-semibold">Death</span>. Each Breaker took one, and each power took a blade.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter III</span>
+          <h4 class="text-xl text-white font-bold">The Shattering Strike</h4>
+          <p class="text-gray-300 font-light leading-loose">They forged seven supreme weapons from raw elemental fury, and in a single moment they struck together. Seven blades fell upon the bedrock of Diyu at once, and the prison cracked open. Reality tore. Through the wound the Seven walked out of the cosmos entire, into the boundless unknown, and the Court could only watch them go.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-gray-400 uppercase tracking-widest">Chapter IV</span>
+          <h4 class="text-xl text-white font-bold">Rust and Silence</h4>
+          <p class="text-gray-300 font-light leading-loose">Such power has a price. A force that can break a universe does not fade gently from the steel that carried it. The blades burned out in the instant of the strike. Stripped of their primal charge, they corroded and rusted, and they fell clattering to the ash as lifeless relics. The Seven were gone. Their weapons were left behind as scrap iron.</p>
+        </article>
+      </div>
+
+      <!-- TAB 3: DEATH'S REBELLION -->
+      <div id="lorePanel-rebellion" class="lore-panel hidden max-w-3xl space-y-10">
+        <div>
+          <span class="text-[11px] font-mono font-bold text-teal-accent uppercase tracking-widest">// THE OBSIDIAN CHAINS &amp; THE SEVEN ALTARS</span>
+          <h3 class="text-3xl text-white font-bold mt-1">Death's Rebellion</h3>
+        </div>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-red-400 uppercase tracking-widest">Chapter I</span>
+          <h4 class="text-xl text-white font-bold">The Guide Cast Down</h4>
+          <p class="text-gray-300 font-light leading-loose">Humiliation burned through the golden halls. Mortals had cracked open an absolute prison, and the Court needed someone to blame. They did not blame themselves, and they did not blame the heretics who had escaped beyond their reach. They blamed Death.</p>
+          <p class="text-gray-300 font-light leading-loose">He was the universal guide, the ancient ferryman who carried every soul across the cosmos. The Court stripped him of his crown and took from him the duty he had held since the first death.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-red-400 uppercase tracking-widest">Chapter II</span>
+          <h4 class="text-xl text-white font-bold">Chains of Obsidian Law</h4>
+          <p class="text-gray-300 font-light leading-loose">He was cast down into the ash and bound in glowing chains of obsidian, forged from celestial law itself. His domain, once the whole of creation, was reduced to a single wretched pocket of purgatory, the place where the tear had been. There he was ordered to stand watch over the ruin, a warden of the ash.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-red-400 uppercase tracking-widest">Chapter III</span>
+          <h4 class="text-xl text-white font-bold">The Silent Vendetta</h4>
+          <p class="text-gray-300 font-light leading-loose">The Court looked upon its chained warden and saw nothing. A servant guarding trash. They forgot that Death is the one thing in all of creation that waits, and they never thought to wonder what he was thinking. In the silence beneath the chains, his hatred grew patient and calculating, and it was never in a hurry.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter IV</span>
+          <h4 class="text-xl text-white font-bold">The Hall of Last Breaths</h4>
+          <p class="text-gray-300 font-light leading-loose">Death did not sweep away the rusted blades the Seven had left behind. He carried them into a hall of carved stone and laid each one upon its own altar. Seven altars, seven relics, in the place the dead now call the Hall of Last Breaths.</p>
+          <p class="text-gray-300 font-light leading-loose">His reasoning was a quiet kind of treason. If seven mortals could use these weapons to break out of Purgatory, then seven restored blades could break into the Celestial Realm.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter V</span>
+          <h4 class="text-xl text-white font-bold">What the Blades Forgot</h4>
+          <p class="text-gray-300 font-light leading-loose">But in Diyu, steel is meaningless. Only memory carries true power. The blades lie in a state of cosmic amnesia. They have forgotten the heat of fire and the bite of ice, and they have forgotten the mortal oaths that forged them. To wake them, someone must remember on their behalf.</p>
+        </article>
+
+        <article class="space-y-3">
+          <span class="text-[11px] font-mono text-teal-accent uppercase tracking-widest">Chapter VI</span>
+          <h4 class="text-xl text-white font-bold">Death Tokens and the Dueling Ground</h4>
+          <p class="text-gray-300 font-light leading-loose">So the duels began. Those who walk Diyu must test their edge against one another in high-stakes combat, one against one, where a single clean strike decides everything. Every victory yields a Death Token, a distilled echo of struggle, stamina, and triumph, a memory made solid.</p>
+          <p class="text-gray-300 font-light leading-loose">Death feeds these tokens to the altars. Slowly, the rusted relics are remembering what they were. When they are whole again they will be mythic artifacts, weapons strong enough to shatter the heavens.</p>
+        </article>
+      </div>
+
+      <!-- ALTAR RUNE INSCRIPTION CALLOUT -->
+      <blockquote class="mt-8 relative border-l-4 border-teal-accent bg-gradient-to-r from-[#082220]/70 to-transparent rounded-r-xl px-6 py-5">
+        <span class="text-[10px] font-mono text-teal-accent tracking-widest uppercase">// FIRE ALTAR INSCRIPTION</span>
+        <p class="text-lg sm:text-xl text-white leading-relaxed mt-2 italic">"Ash remembers every oath. Beneath the basalt, an ember waits for the blade that will carry it into the world."</p>
+      </blockquote>
+    </div>
   </section>
 
   <!-- SECTION 4: MEDIA & TRAILERS -->
@@ -747,7 +876,7 @@
       </div>
       <div class="z-10 flex flex-wrap items-center gap-4">
         <a href="https://www.spawn.co/@chocopuff/one-hit-kill" target="_blank" rel="noopener noreferrer" 
-           class="btn-glow-teal btn-parallelogram text-black font-extrabold text-sm px-8 py-4 tracking-wider uppercase">
+           class="btn-glow-teal btn-parallelogram text-black font-extrabold text-sm px-8 py-4 tracking-wider uppercase font-sans">
           <span>PLAY ON SPAWN.CO <i class="fa-solid fa-play text-xs"></i></span>
         </a>
       </div>
@@ -1033,6 +1162,22 @@
         nextTier();
       }
     });
+
+    /* LORE TABS */
+    function switchLoreTab(key) {
+      const keys = ['diyu', 'breakers', 'rebellion'];
+      keys.forEach(k => {
+        const panel = document.getElementById(`lorePanel-${k}`);
+        const btn = document.getElementById(`loreTab-${k}`);
+        if (k === key) {
+          panel.classList.remove('hidden');
+          btn.className = "btn-parallelogram px-4 py-2 text-xs font-mono uppercase tracking-wider transition bg-teal-accent text-black font-bold border border-teal-accent whitespace-nowrap";
+        } else {
+          panel.classList.add('hidden');
+          btn.className = "btn-parallelogram px-4 py-2 text-xs font-mono uppercase tracking-wider transition border border-white/10 text-gray-400 hover:text-white hover:border-white/30 whitespace-nowrap";
+        }
+      });
+    }
 
     /* COMBAT MECHANICS INTERACTIVE TABS & VIDEO */
     const combatData = {
