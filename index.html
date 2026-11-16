@@ -224,7 +224,7 @@
         <!-- VIDEO VIEWPORT CONTAINER -->
         <div class="relative w-full aspect-video rounded-xl border border-white/15 bg-black overflow-hidden flex items-center justify-center group shadow-inner">
           <!-- Active Loop Video -->
-          <video id="combatVideo" class="w-full h-full object-cover hidden" autoplay loop muted playsinline src="videos/attack.mp4">
+          <video id="combatVideo" class="w-full h-full object-cover hidden" autoplay loop muted playsinline src="videos/attack.webm">
           </video>
           
           <!-- Fallback placeholder when video file is not yet dropped into videos/ -->
@@ -233,7 +233,7 @@
               <i class="fa-solid fa-film text-teal-accent text-base"></i>
             </div>
             <p id="fallbackTitle" class="text-sm font-custom text-white tracking-wider uppercase font-bold">ATTACK MOVE PREVIEW</p>
-            <p class="text-[11px] font-mono text-gray-400 mt-1">Place <span id="fallbackFilename" class="text-teal-accent font-semibold">attack.mp4</span> in <code class="text-gray-300">videos/</code> to play clip</p>
+            <p class="text-[11px] font-mono text-gray-400 mt-1">Place <span id="fallbackFilename" class="text-teal-accent font-semibold">attack.webm</span> in <code class="text-gray-300">videos/</code> to play clip</p>
           </div>
 
           <!-- Video corner scanline aesthetic accents -->
@@ -1185,51 +1185,51 @@
         title: "Attacks",
         subtitle: "(4-Way Directional & Feints)",
         desc: "Strike from four distinct angles with charged attacks. Release your strike early to feint, baiting reactions and forcing early defensive reads from your opponent.",
-        video: "videos/attack.mp4",
+        video: "videos/attack.webm",
         tag: "OFFENSE",
         tagClass: "text-red-400 bg-red-950/70 border-red-500/30",
         fallbackTitle: "ATTACK MOVE PREVIEW",
-        fallbackFile: "attack.mp4"
+        fallbackFile: "attack.webm"
       },
       defend: {
         title: "Defense",
         subtitle: "(Block & Parry)",
         desc: "Hold to block incoming strikes at the cost of stamina. Timed parries neutralize attacks completely, punishing aggressive play and exposing the opponent for a fatal counter.",
-        video: "videos/defend.mp4",
+        video: "videos/defend.webm",
         tag: "DEFENSE",
         tagClass: "text-teal-accent bg-teal-950/70 border-teal-accent/30",
         fallbackTitle: "DEFENSE MOVE PREVIEW",
-        fallbackFile: "defend.mp4"
+        fallbackFile: "defend.webm"
       },
       kick: {
         title: "Kick",
         subtitle: "(Guard Break)",
         desc: "Drive a heavy kick into blocking opponents to shatter their guard, or interrupt foes mid-charge to knock them to the ground.",
-        video: "videos/kick.mp4",
+        video: "videos/kick.webm",
         tag: "UTILITY",
         tagClass: "text-amber-400 bg-amber-950/70 border-amber-500/30",
         fallbackTitle: "KICK MOVE PREVIEW",
-        fallbackFile: "kick.mp4"
+        fallbackFile: "kick.webm"
       },
       dodge: {
         title: "Dodge",
         subtitle: "(Phantom Evasion)",
         desc: "Precision footwork avoids incoming strikes. Execute a Perfect Dodge to leave behind an afterimage while instantly refunding stamina.",
-        video: "videos/dodge.mp4",
+        video: "videos/dodge.webm",
         tag: "EVASION",
         tagClass: "text-cyan-400 bg-cyan-950/70 border-cyan-500/30",
         fallbackTitle: "DODGE MOVE PREVIEW",
-        fallbackFile: "dodge.mp4"
+        fallbackFile: "dodge.webm"
       },
       stamina: {
         title: "Stamina",
         subtitle: "(Survival Pool)",
         desc: "Managing your stamina is life or death. Depleting your pool completely leaves you stunned and vulnerable to an instant execution.",
-        video: "videos/stamina.mp4",
+        video: "videos/stamina.webm",
         tag: "SURVIVAL",
         tagClass: "text-purple-400 bg-purple-950/70 border-purple-500/30",
         fallbackTitle: "STAMINA POOL PREVIEW",
-        fallbackFile: "stamina.mp4"
+        fallbackFile: "stamina.webm"
       }
     };
 
